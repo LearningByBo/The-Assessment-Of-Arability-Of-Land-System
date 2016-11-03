@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0020)https://habo.qq.com/ -->
 <html lang="zh-CN" class="fp-enabled" style="overflow: visible; height: initial;">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--<base href="https://habo.qq.com/">-->
-    <!--<base href=".">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>哈勃分析系统</title>
+    <title>耕地地力评价系统</title>
 
     <script src="../static/js/jquery-1.8.3.min.js"></script>
     <script language="javascript" src="../static/js/tcss.ping.https.js"></script>
@@ -35,57 +32,6 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $(".li_list").hover(function () {
-                $(".li_list .arrow").addClass("arrow_up");
-                $(".li_list .sub_list").show();
-            }, function () {
-                $(".li_list .arrow").removeClass("arrow_up");
-                $(".li_list .sub_list").hide();
-            });
-            var default_content = "请输入MD5搜索已有报告";
-            $("#header_hash").focusin(function () {
-                if ($(this).val() == default_content) {
-                    $(this).val("");
-                }
-            });
-
-            $("#header_hash").focusout(function () {
-                if ($(this).val() == "") {
-                    $(this).val(default_content);
-                }
-            });
-
-            $("#search_btn").bind("click", function () {
-                var r = /^[0-9a-fA-F]{32,32}$/;
-                var header_hash = $.trim($("#header_hash").val());
-                if (header_hash == default_content) {
-
-                } else if (!r.test(header_hash)) {
-                    showDialog.show({id: "check_fail", bgcolor: "#000000", opacity: 60});
-                    $("#check_word_fail").html("MD5格式不正确");
-                    $("#header_hash").val(default_content);
-                } else {
-                    var host = $("body").attr("host");
-                    window.location.href = host + "file/showdetail?md5=" + header_hash;
-                }
-            })
-
-            $("#header_hash").keydown(function (e) {
-                if (e.keyCode == 13) {
-                    var r = /^[0-9a-fA-F]{32,32}$/;
-                    var header_hash = $.trim($("#header_hash").val());
-                    if (header_hash == default_content) {
-                    } else if (!r.test(header_hash)) {
-                        showDialog.show({id: "check_fail", bgcolor: "#000000", opacity: 60});
-                        $("#check_word_fail").html("MD5格式不正确");
-                        $("#header_hash").val(default_content);
-                    } else {
-                        var host = $("body").attr("host");
-                        window.location.href = host + "file/showdetail?md5=" + header_hash;
-                    }
-                }
-            })
-
             //建议ie8以上浏览器
             var w = document.body.scrollWidth;
             $("#tip").width(w);
@@ -119,8 +65,7 @@
 
 
 </head>
-<body appid="659014809" check="" style="overflow: visible; height: initial;"
-      class="fp-viewing-0">
+<body check="" style="overflow: visible; height: initial;" class="fp-viewing-0">
 <div id="tip" style="width: 1918px;">
     <span class="tip">建议使用IE8以上版本或其他浏览器</span> <img src="../static/images/close.png" id="image">
 </div>
@@ -133,24 +78,9 @@
         <div class="wtitle">
             <a href="#"><img src="../static/images/head_title.png" height="90" style="border:0"></a>
         </div>
-        <ul style="margin-right:20px">
+        <ul>
             <li class="set"><a href="#">首页</a></li>
-            <li><a href="#">安全工具</a></li>
-            <li class="li_list"><a href="javascript:void(0);" style="cursor:default">安全热点</a>
-                <div class="arrow"></div>
-                <div class="sub_list" style="display: none;">
-                    <a href="#" class="a">热点新闻</a>
-                    <a href="#" class="a" style="border-top:1px solid #ddd">热点报告</a>
-                    <a href="#" class="a" style="border-top:1px solid #ddd">更新历史</a>
-                </div>
-            </li>
-
-        </ul>
-        <div class="search" id="search_content">
-            <input type="text" name="md5" id="header_hash" value="请输入MD5搜索已有报告"
-                   style="font-family: &#39;微软雅黑&#39;; color: #7a7a7a; background-color: #FFF;float:left">
-            <div id="search_btn"></div>
-        </div>
+            <li style="margin-right: 400px"><a href="#">安全工具</a></li>
         <div class="nick" id="login_frame">
             <div id="logined" style="display:none;">
                 <span id="login_nickname"></span>
@@ -178,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <div class="nick_nologin">
+        <div class="nick_nologin" style="margin-right: 2px;">
             <div id="nologin" style="display: block;">
                 <a href="javascript:MGR.showLogin()">登录</a>
             </div>
@@ -666,7 +596,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="foot">Copyright©1998 - 2016 Tencent.All Rights Reserved<br>腾讯公司 版权所有</div>
+                    <div class="foot">Copyright© 2016 .All Rights Reserved<br>版权所有</div>
                 </div>
             </div>
         </div>

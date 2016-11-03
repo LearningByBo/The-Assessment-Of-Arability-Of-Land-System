@@ -1,5 +1,4 @@
 from django.db import models
-from sklearn import tree
 
 # Create your models here.
 class Factor(models.Model):
