@@ -425,7 +425,11 @@ model</columns>
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <key id="119" parent="30" name="PRIMARY">
+    <column id="119" parent="30" name="land_capability">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="120" parent="30" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>

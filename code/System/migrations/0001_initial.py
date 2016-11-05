@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('total_nitrogen', models.IntegerField()),
                 ('available_P', models.IntegerField()),
                 ('available_K', models.IntegerField()),
+                ('land_capability', models.IntegerField()),
             ],
         ),
     ]
