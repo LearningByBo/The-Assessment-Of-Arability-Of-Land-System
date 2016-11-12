@@ -1388,7 +1388,7 @@
         }
 
         /**
-        * Lazy loads images, video and audio elements.
+        * Lazy loads image, video and audio elements.
         */
         function lazyLoad(destiny){
             //Lazy loading images, videos and audios

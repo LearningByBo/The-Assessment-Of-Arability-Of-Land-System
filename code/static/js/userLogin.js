@@ -1,6 +1,7 @@
-try{
+/*try{
 	document.domain = "qq.com";
 }catch(e){}
+*/
 //请求链接数据直接用,改造为动态数据后，将在initHTML中使用
 
 var MGR = {

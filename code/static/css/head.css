@@ -133,7 +133,7 @@
 
 #logined {
 	padding-left: 15px;
-	background: url(../images/dot2.png) top left no-repeat;
+	/* background: url(../images/dot2.png) top left no-repeat; */
 	position:relative;
 }
 #userfold_frame{

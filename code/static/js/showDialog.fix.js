@@ -75,6 +75,7 @@ showDialog = (function() {
 	}
 	return {
 		show: function(p) {
+			alert("show: " + p);
 			var a = (typeof(p) === 'object') ? p : {};
 			this.id = a.id || null;
 			this.bgcolor = a.bgcolor || '#111';
@@ -114,6 +115,7 @@ showDialog = (function() {
 			this.popupInit()
 		},
 		popupInit: function() {
+			alert("popupInit: ");
 			var a = this.onPopupCallback;
 			if (a != null && typeof(a) === 'function') {
 				a()
@@ -218,6 +220,7 @@ showDialog = (function() {
 				_h = getWinHeight(),
 				_rt = null,
 				_st = null;
+			alert("adjust:" + a);
 			if (a != null && gEl(a)) {
 				var b = gEl(a),
 					_iw = b.offsetWidth,

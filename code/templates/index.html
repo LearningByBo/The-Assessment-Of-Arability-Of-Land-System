@@ -8,28 +8,10 @@
 
     <script src="../static/js/jquery-1.8.3.min.js"></script>
     <script language="javascript" src="../static/js/tcss.ping.https.js"></script>
-    <script type="text/javascript" src="../static/js/userLogin.js"></script>
-    <script type="text/javascript" src="../static/js/showDialog.fix.js"></script>
-    <script type="text/javascript" src="../static/js/waypoints.js"></script>
-    <script src="../static/js/jquery.fullPage.js"></script>
-    <script src="../static/js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="../static/js/new.js"></script>
-    <script type="text/javascript" src="../static/js/json.js"></script>
-    <script type="text/javascript" src="../static/js/jquery.uploadify.min.js"></script>
-    <script type="text/javascript" src="../static/js/uploadSuccess.js"></script>
-    <script type="text/javascript" src="../static/js/commo.js"></script>
-    <script type="text/javascript" src="../static/js/upload.js"></script>
-    <script type="text/javascript" src="../static/js/jquery-ui-1.8.4.custom.min.js"></script>
 
     <link href="../static/css/comm.css" rel="stylesheet" type="text/css">
     <link href="../static/css/head.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/N-newindex.css">
-    <link href="../static/css/jquery-ui-1.8.4.custom.css" type="text/css" rel="Stylesheet">
 
-    <script language="javascript">
-        if (typeof(pgvMain) == 'function')
-            pgvMain();
-    </script>
     <script type="text/javascript">
         $(function () {
             //建议ie8以上浏览器
@@ -65,589 +47,568 @@
 
 
 </head>
-<body check="" style="overflow: visible; height: initial;" class="fp-viewing-0">
-<div id="tip" style="width: 1918px;">
-    <span class="tip">建议使用IE8以上版本或其他浏览器</span> <img src="../static/images/close.png" id="image">
-</div>
-<div id="orientation_tip">
-    <span class="tip">建议使用横屏浏览</span> <span style="" id="image2"><img src="../static/images/close(1).png"
-                                                                      style="margin: 20px 0 0 20px"></span>
-</div>
-<div style="background: #FFF; width: 100%">
-    <div class="top">
-        <div class="wtitle">
-            <a href="#"><img src="../static/images/head_title.png" height="90" style="border:0"></a>
+<body style="overflow: visible; height: initial;" class="fp-viewing-0">
+    <div id="tip" style="width: 1918px;">
+        <span class="tip">建议使用IE8以上版本或其他浏览器</span>
+        <img src="../static/images/close.png" id="image">
+    </div>
+    <div id="orientation_tip">
+        <span class="tip">建议使用横屏浏览</span>
+        <span style="" id="image2">
+            <img src="../static/images/close(1).png"  style="margin: 20px 0 0 20px">
+        </span>
+    </div>
+    <div style="background: #FFF; width: 100%">
+        <div class="top">
+            <div class="wtitle">
+                <a href=""><img src="../static/images/head_title.png" height="90" style="border:0"></a>
+            </div>
+            <ul>
+                <li class="set"><a href="index.html">首页</a></li>
+                <li style="margin-right: 400px"><a href="#">信息录入</a></li>
+            </ul>
+            <div class="nick_nologin" style="margin-right: 2px;">
+                <div id="nologin" style="display: block;">
+                    <a href="admin">登录</a>
+                </div>
+            </div>
         </div>
-        <ul>
-            <li class="set"><a href="#">首页</a></li>
-            <li style="margin-right: 400px"><a href="#">安全工具</a></li>
-        <div class="nick" id="login_frame">
-            <div id="logined" style="display:none;">
-                <span id="login_nickname"></span>
-                <span id="Vip-station" class="notvip_station"></span>
-                <div id="userfold_frame">
-                    <div id="userfold" class="userfold">
-                        <div id="userImg"></div>
-                        <div id="userName">
-                            <div class="user_name"></div>
-                            <div class="notvip_station" style="float:left;margin:5px 0 0 10px"></div>
-                            <br>
-                            <div id="userStation"><a
-                                    href="#"
-                                    target="_blank">升级为高级用户</a></div>
-                        </div>
+    </div>
+    <div id="check_fail">
+        <a href="javascript:showDialog.hide();" id="close" class="close"></a>
+        <div id="check_word_fail" class="check_word_fail"></div>
+    </div>
 
-                        <ul>
-                            <li style="border-right:1px solid #ddd"><a
-                                    href="#"
-                                    target="_blank">交流反馈</a></li>
-                            <li><a href="javascript:void(0)" id="changelogout">注销</a></li>
-                        </ul>
+    <script type="text/javascript" src="../static/js/userLogin.js"></script>
+    <script type="text/javascript" src="../static/js/showDialog.fix.js"></script>
+    <script type="text/javascript" src="../static/js/waypoints.js"></script>
+    <script src="../static/js/jquery.fullPage.js"></script>
+    <script src="../static/js/jquery.easing.min.js"></script>
+
+    <link href="../static/css/jquery-ui-1.8.4.custom.css" type="text/css" rel="Stylesheet">
+    <link rel="stylesheet" href="../static/css/N-newindex.css">
+
+    <div class="mod-bg-layer">
+        <div class="mod-star-list" style="height: 4000px;">
+            <div class="inner">
+                <div class="meteor" style="transform: scale(0.74263) rotate(-2.17509deg); top: 627.015px; right: 1477.2px;">
+                    <div class="box action" style="animation-delay: 1.76538s; animation-duration: 3.36571s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.42394) rotate(5.62693deg); top: 197.195px; right: 409.434px;">
+                    <div class="box action" style="animation-delay: 8.70235s; animation-duration: 3.4313s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.662367) rotate(1.34961deg); top: 655.593px; right: 198.456px;">
+                    <div class="box action" style="animation-delay: 5.39724s; animation-duration: 3.59905s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.856673) rotate(3.06094deg); top: 244.959px; right: 54.7883px;">
+                    <div class="box action" style="animation-delay: 8.49155s; animation-duration: 4.97463s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.43734) rotate(2.94439deg); top: 515.062px; right: 1655.47px;">
+                    <div class="box action" style="animation-delay: 6.95355s; animation-duration: 4.0492s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.520167) rotate(-2.01185deg); top: 58.2387px; right: 1804.38px;">
+                    <div class="box action" style="animation-delay: 3.64867s; animation-duration: 4.73809s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.36123) rotate(-0.277974deg); top: 137.512px; right: 725.408px;">
+                    <div class="box action" style="animation-delay: 6.70047s; animation-duration: 4.75888s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.328841) rotate(5.74724deg); top: 255.663px; right: 74.8296px;">
+                    <div class="box action" style="animation-delay: 7.83866s; animation-duration: 3.65963s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.874671) rotate(-0.701346deg); top: 636.169px; right: 865.909px;">
+                    <div class="box action" style="animation-delay: 9.62846s; animation-duration: 3.27567s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.27285) rotate(2.88316deg); top: 183.053px; right: 936.265px;">
+                    <div class="box action" style="animation-delay: 9.52726s; animation-duration: 3.87975s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.891595) rotate(0.773127deg); top: 656.239px; right: 487.814px;">
+                    <div class="box action" style="animation-delay: 8.48826s; animation-duration: 4.8882s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.740974) rotate(5.44326deg); top: 508.381px; right: 1419.53px;">
+                    <div class="box action" style="animation-delay: 3.04453s; animation-duration: 4.23509s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.718969) rotate(3.27648deg); top: 624.461px; right: 672.537px;">
+                    <div class="box action" style="animation-delay: 8.94838s; animation-duration: 4.80284s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.411751) rotate(-0.079012deg); top: 667.484px; right: 671.307px;">
+                    <div class="box action" style="animation-delay: 2.42611s; animation-duration: 3.76264s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.401436) rotate(3.7234deg); top: 542.254px; right: 571.051px;">
+                    <div class="box action" style="animation-delay: 7.97855s; animation-duration: 4.35458s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.814559) rotate(0.131393deg); top: 312.5px; right: 1116.82px;">
+                    <div class="box action" style="animation-delay: 4.49069s; animation-duration: 3.61983s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.840371) rotate(-1.69425deg); top: 456.927px; right: 201.944px;">
+                    <div class="box action" style="animation-delay: 2.58067s; animation-duration: 3.97929s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.541683) rotate(5.407deg); top: 685.571px; right: 1528.5px;">
+                    <div class="box action" style="animation-delay: 5.95173s; animation-duration: 3.7225s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.974501) rotate(-2.45029deg); top: 36.6652px; right: 487.492px;">
+                    <div class="box action" style="animation-delay: 2.91692s; animation-duration: 3.16565s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.616553) rotate(-2.41807deg); top: 267.876px; right: 1468.23px;">
+                    <div class="box action" style="animation-delay: 9.52529s; animation-duration: 4.04201s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.40563) rotate(4.74589deg); top: 1148.24px; right: 1148.42px;">
+                    <div class="box action" style="animation-delay: 8.57828s; animation-duration: 3.56068s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.385259) rotate(6.42078deg); top: 1300.17px; right: 728.73px;">
+                    <div class="box action" style="animation-delay: 2.24028s; animation-duration: 3.63447s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.48783) rotate(4.55637deg); top: 932.725px; right: 862.175px;">
+                    <div class="box action" style="animation-delay: 5.38114s; animation-duration: 3.28731s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.34496) rotate(-1.63014deg); top: 1192.94px; right: 723.53px;">
+                    <div class="box action" style="animation-delay: 7.36143s; animation-duration: 3.16343s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.404924) rotate(5.32849deg); top: 914.157px; right: 909.9px;">
+                    <div class="box action" style="animation-delay: 1.73155s; animation-duration: 3.02567s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.28678) rotate(2.76692deg); top: 1479.01px; right: 1352.19px;">
+                    <div class="box action" style="animation-delay: 0.460038s; animation-duration: 3.77444s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.02166) rotate(3.15343deg); top: 1417.29px; right: 966.727px;">
+                    <div class="box action" style="animation-delay: 5.12281s; animation-duration: 4.15786s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.46955) rotate(1.41834deg); top: 957.259px; right: 1195.44px;">
+                    <div class="box action" style="animation-delay: 7.96679s; animation-duration: 4.55892s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.61456) rotate(-0.659056deg); top: 1074.55px; right: 874.07px;">
+                    <div class="box action" style="animation-delay: 9.9018s; animation-duration: 3.0992s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.427036) rotate(2.90941deg); top: 910.027px; right: 1553.53px;">
+                    <div class="box action" style="animation-delay: 6.35801s; animation-duration: 4.8833s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.425121) rotate(-0.267858deg); top: 1077.4px; right: 1482.76px;">
+                    <div class="box action" style="animation-delay: 8.51388s; animation-duration: 4.52798s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.01984) rotate(4.03403deg); top: 1188.38px; right: 984.527px;">
+                    <div class="box action" style="animation-delay: 3.51982s; animation-duration: 3.69117s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.16858) rotate(1.58025deg); top: 941.974px; right: 1233.63px;">
+                    <div class="box action" style="animation-delay: 3.11243s; animation-duration: 3.615s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.76091) rotate(1.04391deg); top: 994.374px; right: 812.501px;">
+                    <div class="box action" style="animation-delay: 6.16289s; animation-duration: 4.98539s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.745334) rotate(1.94029deg); top: 1083.46px; right: 645.571px;">
+                    <div class="box action" style="animation-delay: 5.61387s; animation-duration: 4.54759s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.313413) rotate(4.10941deg); top: 1192.55px; right: 1642.11px;">
+                    <div class="box action" style="animation-delay: 3.69252s; animation-duration: 3.72395s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.517349) rotate(5.24818deg); top: 1144.17px; right: 1487.1px;">
+                    <div class="box action" style="animation-delay: 3.74862s; animation-duration: 4.51835s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.718395) rotate(6.21594deg); top: 1446.32px; right: 1055.5px;">
+                    <div class="box action" style="animation-delay: 1.54037s; animation-duration: 4.09316s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.570691) rotate(2.02042deg); top: 1071.42px; right: 767.778px;">
+                    <div class="box action" style="animation-delay: 8.17976s; animation-duration: 4.61799s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.908966) rotate(-2.47856deg); top: 1147.03px; right: 1914.39px;">
+                    <div class="box action" style="animation-delay: 1.17161s; animation-duration: 3.35014s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.26114) rotate(5.67101deg); top: 2126.36px; right: 283.786px;">
+                    <div class="box" style="animation-delay: 0.556213s; animation-duration: 3.98843s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.957753) rotate(0.734726deg); top: 1765.22px; right: 1532.48px;">
+                    <div class="box" style="animation-delay: 5.09086s; animation-duration: 4.18983s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.1001) rotate(6.34848deg); top: 1659.07px; right: 273.061px;">
+                    <div class="box action" style="animation-delay: 1.66404s; animation-duration: 4.669s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.13056) rotate(2.03925deg); top: 2107.97px; right: 220.377px;">
+                    <div class="box" style="animation-delay: 5.74973s; animation-duration: 3.2348s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.443417) rotate(-0.310908deg); top: 1715.83px; right: 1311.82px;">
+                    <div class="box" style="animation-delay: 0.349447s; animation-duration: 4.96649s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.850535) rotate(4.3902deg); top: 1669.93px; right: 1190.37px;">
+                    <div class="box action" style="animation-delay: 6.6162s; animation-duration: 3.00474s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.304171) rotate(5.64006deg); top: 1953.9px; right: 220.887px;">
+                    <div class="box" style="animation-delay: 1.71378s; animation-duration: 4.84412s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.825712) rotate(7.41224deg); top: 2388.38px; right: 1081.05px;">
+                    <div class="box" style="animation-delay: 9.58292s; animation-duration: 3.76452s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.528422) rotate(-0.421318deg); top: 2252.77px; right: 1266.12px;">
+                    <div class="box" style="animation-delay: 0.295278s; animation-duration: 3.39382s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.386299) rotate(0.720772deg); top: 1898.08px; right: 47.3966px;">
+                    <div class="box" style="animation-delay: 3.41873s; animation-duration: 4.2338s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.508214) rotate(2.7415deg); top: 2378.9px; right: 395.502px;">
+                    <div class="box" style="animation-delay: 0.299798s; animation-duration: 3.68044s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.14524) rotate(2.42093deg); top: 1902.44px; right: 210.36px;">
+                    <div class="box" style="animation-delay: 5.34155s; animation-duration: 3.37051s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(1.03457) rotate(0.773976deg); top: 2216.06px; right: 1462.62px;">
+                    <div class="box" style="animation-delay: 8.06398s; animation-duration: 3.9443s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(1.1972) rotate(-0.907954deg); top: 2386.38px; right: 1871.95px;">
+                    <div class="box" style="animation-delay: 2.01286s; animation-duration: 3.96895s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.807724) rotate(2.52136deg); top: 2348.3px; right: 1704.36px;">
+                    <div class="box" style="animation-delay: 6.59299s; animation-duration: 3.89214s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.441964) rotate(6.30714deg); top: 2221.9px; right: 979.854px;">
+                    <div class="box" style="animation-delay: 1.9312s; animation-duration: 3.39416s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.28651) rotate(1.14553deg); top: 1680.94px; right: 1746.13px;">
+                    <div class="box action" style="animation-delay: 6.81082s; animation-duration: 3.38271s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.45692) rotate(-1.1323deg); top: 2321.03px; right: 805.978px;">
+                    <div class="box" style="animation-delay: 3.14677s; animation-duration: 4.23043s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.49278) rotate(3.96748deg); top: 1896.84px; right: 792.706px;">
+                    <div class="box" style="animation-delay: 8.20638s; animation-duration: 4.76173s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.797464) rotate(5.53523deg); top: 1847.85px; right: 748.757px;">
+                    <div class="box" style="animation-delay: 4.98243s; animation-duration: 4.27725s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.654271) rotate(-1.02317deg); top: 2414.83px; right: 178.406px;">
+                    <div class="box" style="animation-delay: 5.44298s; animation-duration: 4.89779s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.04224) rotate(1.18157deg); top: 3192.53px; right: 754.549px;">
+                    <div class="box" style="animation-delay: 3.54359s; animation-duration: 3.91559s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.562937) rotate(7.36786deg); top: 2737.85px; right: 808.155px;">
+                    <div class="box" style="animation-delay: 9.77736s; animation-duration: 4.76986s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.43468) rotate(1.21795deg); top: 2637.8px; right: 465.176px;">
+                    <div class="box" style="animation-delay: 2.8839s; animation-duration: 3.85335s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.546342) rotate(-1.00826deg); top: 2816.9px; right: 1184.39px;">
+                    <div class="box" style="animation-delay: 1.60103s; animation-duration: 3.78049s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(1.28868) rotate(-0.493303deg); top: 2665.46px; right: 397.085px;">
+                    <div class="box" style="animation-delay: 9.64525s; animation-duration: 4.24731s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.965676) rotate(2.99847deg); top: 2405.88px; right: 1708.43px;">
+                    <div class="box" style="animation-delay: 2.90665s; animation-duration: 4.75571s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.66098) rotate(0.204341deg); top: 2411.93px; right: 1607.9px;">
+                    <div class="box" style="animation-delay: 3.28345s; animation-duration: 4.6833s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.688418) rotate(-1.07557deg); top: 2767.34px; right: 1425.45px;">
+                    <div class="box" style="animation-delay: 9.69832s; animation-duration: 3.84226s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.11997) rotate(4.41387deg); top: 3155.38px; right: 929.038px;">
+                    <div class="box" style="animation-delay: 4.88189s; animation-duration: 3.11s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.932268) rotate(0.470555deg); top: 2759.34px; right: 1278.4px;">
+                    <div class="box" style="animation-delay: 5.23711s; animation-duration: 4.85321s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.812348) rotate(0.305499deg); top: 2535.34px; right: 1453.68px;">
+                    <div class="box" style="animation-delay: 5.14179s; animation-duration: 4.48636s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.4171) rotate(-2.1501deg); top: 2739.46px; right: 519.623px;">
+                    <div class="box" style="animation-delay: 5.50308s; animation-duration: 3.44869s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.28867) rotate(-1.90956deg); top: 2949.8px; right: 1255.5px;">
+                    <div class="box" style="animation-delay: 6.33068s; animation-duration: 4.6596s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.16303) rotate(-1.03616deg); top: 2612.4px; right: 189.304px;">
+                    <div class="box" style="animation-delay: 8.52984s; animation-duration: 4.74682s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.0723) rotate(5.23543deg); top: 2618.24px; right: 1723.84px;">
+                    <div class="box" style="animation-delay: 9.7038s; animation-duration: 4.99451s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.774756) rotate(4.82621deg); top: 2639.27px; right: 1550.27px;">
+                    <div class="box" style="animation-delay: 2.92167s; animation-duration: 3.60639s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.31987) rotate(2.41017deg); top: 3091.08px; right: 823.036px;">
+                    <div class="box" style="animation-delay: 6.11345s; animation-duration: 4.6465s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.564188) rotate(-1.09023deg); top: 2682.58px; right: 1827.82px;">
+                    <div class="box" style="animation-delay: 1.71475s; animation-duration: 4.01977s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.689223) rotate(2.56093deg); top: 2785.03px; right: 1646.41px;">
+                    <div class="box" style="animation-delay: 4.65701s; animation-duration: 3.94166s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.778245) rotate(4.57067deg); top: 3454.33px; right: 1760.19px;">
+                    <div class="box" style="animation-delay: 3.29597s; animation-duration: 3.27905s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.536093) rotate(-2.35431deg); top: 3728.08px; right: 935.173px;">
+                    <div class="box" style="animation-delay: 1.00267s; animation-duration: 4.54487s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.63103) rotate(3.42111deg); top: 3932.54px; right: 1409.89px;">
+                    <div class="box" style="animation-delay: 7.70516s; animation-duration: 3.44319s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.4632) rotate(5.79538deg); top: 3572.18px; right: 85.5852px;">
+                    <div class="box" style="animation-delay: 5.14562s; animation-duration: 4.11956s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.368264) rotate(3.07102deg); top: 3928.78px; right: 325.372px;">
+                    <div class="box" style="animation-delay: 2.56426s; animation-duration: 3.60936s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.20024) rotate(6.87199deg); top: 3438.64px; right: 1578.03px;">
+                    <div class="box" style="animation-delay: 0.137302s; animation-duration: 4.86745s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.691067) rotate(-1.38721deg); top: 3892.21px; right: 823.892px;">
+                    <div class="box" style="animation-delay: 6.83742s; animation-duration: 3.52893s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.28321) rotate(2.95933deg); top: 3608.73px; right: 723.708px;">
+                    <div class="box" style="animation-delay: 0.442151s; animation-duration: 3.42569s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.39756) rotate(2.10742deg); top: 3710.47px; right: 1231.45px;">
+                    <div class="box" style="animation-delay: 9.81805s; animation-duration: 3.39867s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.630031) rotate(5.59485deg); top: 3263.74px; right: 1099.59px;">
+                    <div class="box" style="animation-delay: 6.91828s; animation-duration: 3.05929s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(1.31751) rotate(0.229371deg); top: 3380.38px; right: 772.305px;">
+                    <div class="box" style="animation-delay: 2.08449s; animation-duration: 3.13884s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.664093) rotate(2.97283deg); top: 3334.68px; right: 316.851px;">
+                    <div class="box" style="animation-delay: 0.0473217s; animation-duration: 4.82863s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.964134) rotate(6.50048deg); top: 3866.43px; right: 1001.66px;">
+                    <div class="box" style="animation-delay: 6.9324s; animation-duration: 3.26828s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(0.304757) rotate(3.4955deg); top: 3752.3px; right: 1545.73px;">
+                    <div class="box" style="animation-delay: 1.51385s; animation-duration: 3.52263s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(1.22774) rotate(-1.20278deg); top: 3822.35px; right: 828.619px;">
+                    <div class="box" style="animation-delay: 6.68675s; animation-duration: 4.20355s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.83634) rotate(-0.840718deg); top: 3298.62px; right: 419.897px;">
+                    <div class="box" style="animation-delay: 5.42489s; animation-duration: 4.86587s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.672733) rotate(7.37361deg); top: 3612.07px; right: 1197.49px;">
+                    <div class="box" style="animation-delay: 6.13177s; animation-duration: 3.33387s;"></div>
+                </div>
+                <div class="meteor"
+                     style="transform: scale(0.351914) rotate(-0.31658deg); top: 3392.39px; right: 42.679px;">
+                    <div class="box" style="animation-delay: 8.73405s; animation-duration: 4.82064s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.49533) rotate(2.21148deg); top: 3326.22px; right: 661.679px;">
+                    <div class="box" style="animation-delay: 4.02798s; animation-duration: 3.14571s;"></div>
+                </div>
+                <div class="meteor" style="transform: scale(1.1875) rotate(-1.14392deg); top: 3305.22px; right: 1830.91px;">
+                    <div class="box" style="animation-delay: 6.52941s; animation-duration: 3.30732s;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dowebok" class="fullpage-wrapper" style="height: 100%; position: relative;">
+            <div class="section section1 fp-section active fp-table" style="height: 925px;">
+                <div class="fp-tableCell" style="height: 925px;">
+                    <div class="wrap">
+                        <div class="slogan animation1"></div>
+                        <form method="post" enctype="multipart/form-data" class="upload_form">
+                            <div id="upload2" class="upload upload_btn_index animation2">
+                                <input id="file_upload2" name="fil" type="file" width="208" unselectable="on" onclick="this.form.reset();">
+                            </div>
+                            <div class="upload_tips animation2_1">
+                                <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
+                                <div class="tips_frame" style="display: none;">
+                                    <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
+                                    <div class="tips_content">
+                                        <div class="tips_title">
+                                            <div class="tips_close"></div>
+                                        </div>
+                                        <div class="tips_main">
+                                            <div class="tips_right">
+                                                <div class="tips_title_letter">支持文件格式：</div>
+                                                <ul>
+                                                    <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
+                                                    <li>各种压缩包（RAR、ZIP、7z等）</li>
+                                                    <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
+                                                </ul>
+                                                <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
+                                                <ul>
+                                                    <li>普通用户不超过30MB</li>
+                                                    <li>高级用户不超过100MB</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </form>
                     </div>
-                    <span id="user_arrow"></span>
+                    <iframe id="tmp_downloadhelper_iframe" style="display: none;" src="./saved_resource(1).html"></iframe>
                 </div>
             </div>
-        </div>
-        <div class="nick_nologin" style="margin-right: 2px;">
-            <div id="nologin" style="display: block;">
-                <a href="admin">登录</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="check_fail">
-    <a href="javascript:showDialog.hide();" id="close" class="close"></a>
-    <div id="check_word_fail" class="check_word_fail"></div>
-</div>
-
-
-<div class="loginframe" id="loginframe">
-    <iframe name="login_ifr" id="login_ifr" frameborder="0" scrolling="no" width="100%" height="100%"
-            src="./saved_resource.html"></iframe>
-</div>
-
-<div class="mod-bg-layer">
-    <div class="mod-star-list" style="height: 4000px;">
-        <div class="inner">
-            <div class="meteor" style="transform: scale(0.74263) rotate(-2.17509deg); top: 627.015px; right: 1477.2px;">
-                <div class="box action" style="animation-delay: 1.76538s; animation-duration: 3.36571s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.42394) rotate(5.62693deg); top: 197.195px; right: 409.434px;">
-                <div class="box action" style="animation-delay: 8.70235s; animation-duration: 3.4313s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.662367) rotate(1.34961deg); top: 655.593px; right: 198.456px;">
-                <div class="box action" style="animation-delay: 5.39724s; animation-duration: 3.59905s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.856673) rotate(3.06094deg); top: 244.959px; right: 54.7883px;">
-                <div class="box action" style="animation-delay: 8.49155s; animation-duration: 4.97463s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.43734) rotate(2.94439deg); top: 515.062px; right: 1655.47px;">
-                <div class="box action" style="animation-delay: 6.95355s; animation-duration: 4.0492s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.520167) rotate(-2.01185deg); top: 58.2387px; right: 1804.38px;">
-                <div class="box action" style="animation-delay: 3.64867s; animation-duration: 4.73809s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.36123) rotate(-0.277974deg); top: 137.512px; right: 725.408px;">
-                <div class="box action" style="animation-delay: 6.70047s; animation-duration: 4.75888s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.328841) rotate(5.74724deg); top: 255.663px; right: 74.8296px;">
-                <div class="box action" style="animation-delay: 7.83866s; animation-duration: 3.65963s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.874671) rotate(-0.701346deg); top: 636.169px; right: 865.909px;">
-                <div class="box action" style="animation-delay: 9.62846s; animation-duration: 3.27567s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.27285) rotate(2.88316deg); top: 183.053px; right: 936.265px;">
-                <div class="box action" style="animation-delay: 9.52726s; animation-duration: 3.87975s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.891595) rotate(0.773127deg); top: 656.239px; right: 487.814px;">
-                <div class="box action" style="animation-delay: 8.48826s; animation-duration: 4.8882s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.740974) rotate(5.44326deg); top: 508.381px; right: 1419.53px;">
-                <div class="box action" style="animation-delay: 3.04453s; animation-duration: 4.23509s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.718969) rotate(3.27648deg); top: 624.461px; right: 672.537px;">
-                <div class="box action" style="animation-delay: 8.94838s; animation-duration: 4.80284s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.411751) rotate(-0.079012deg); top: 667.484px; right: 671.307px;">
-                <div class="box action" style="animation-delay: 2.42611s; animation-duration: 3.76264s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.401436) rotate(3.7234deg); top: 542.254px; right: 571.051px;">
-                <div class="box action" style="animation-delay: 7.97855s; animation-duration: 4.35458s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.814559) rotate(0.131393deg); top: 312.5px; right: 1116.82px;">
-                <div class="box action" style="animation-delay: 4.49069s; animation-duration: 3.61983s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.840371) rotate(-1.69425deg); top: 456.927px; right: 201.944px;">
-                <div class="box action" style="animation-delay: 2.58067s; animation-duration: 3.97929s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.541683) rotate(5.407deg); top: 685.571px; right: 1528.5px;">
-                <div class="box action" style="animation-delay: 5.95173s; animation-duration: 3.7225s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.974501) rotate(-2.45029deg); top: 36.6652px; right: 487.492px;">
-                <div class="box action" style="animation-delay: 2.91692s; animation-duration: 3.16565s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.616553) rotate(-2.41807deg); top: 267.876px; right: 1468.23px;">
-                <div class="box action" style="animation-delay: 9.52529s; animation-duration: 4.04201s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.40563) rotate(4.74589deg); top: 1148.24px; right: 1148.42px;">
-                <div class="box action" style="animation-delay: 8.57828s; animation-duration: 3.56068s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.385259) rotate(6.42078deg); top: 1300.17px; right: 728.73px;">
-                <div class="box action" style="animation-delay: 2.24028s; animation-duration: 3.63447s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.48783) rotate(4.55637deg); top: 932.725px; right: 862.175px;">
-                <div class="box action" style="animation-delay: 5.38114s; animation-duration: 3.28731s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.34496) rotate(-1.63014deg); top: 1192.94px; right: 723.53px;">
-                <div class="box action" style="animation-delay: 7.36143s; animation-duration: 3.16343s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.404924) rotate(5.32849deg); top: 914.157px; right: 909.9px;">
-                <div class="box action" style="animation-delay: 1.73155s; animation-duration: 3.02567s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.28678) rotate(2.76692deg); top: 1479.01px; right: 1352.19px;">
-                <div class="box action" style="animation-delay: 0.460038s; animation-duration: 3.77444s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.02166) rotate(3.15343deg); top: 1417.29px; right: 966.727px;">
-                <div class="box action" style="animation-delay: 5.12281s; animation-duration: 4.15786s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.46955) rotate(1.41834deg); top: 957.259px; right: 1195.44px;">
-                <div class="box action" style="animation-delay: 7.96679s; animation-duration: 4.55892s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.61456) rotate(-0.659056deg); top: 1074.55px; right: 874.07px;">
-                <div class="box action" style="animation-delay: 9.9018s; animation-duration: 3.0992s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.427036) rotate(2.90941deg); top: 910.027px; right: 1553.53px;">
-                <div class="box action" style="animation-delay: 6.35801s; animation-duration: 4.8833s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.425121) rotate(-0.267858deg); top: 1077.4px; right: 1482.76px;">
-                <div class="box action" style="animation-delay: 8.51388s; animation-duration: 4.52798s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.01984) rotate(4.03403deg); top: 1188.38px; right: 984.527px;">
-                <div class="box action" style="animation-delay: 3.51982s; animation-duration: 3.69117s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.16858) rotate(1.58025deg); top: 941.974px; right: 1233.63px;">
-                <div class="box action" style="animation-delay: 3.11243s; animation-duration: 3.615s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.76091) rotate(1.04391deg); top: 994.374px; right: 812.501px;">
-                <div class="box action" style="animation-delay: 6.16289s; animation-duration: 4.98539s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.745334) rotate(1.94029deg); top: 1083.46px; right: 645.571px;">
-                <div class="box action" style="animation-delay: 5.61387s; animation-duration: 4.54759s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.313413) rotate(4.10941deg); top: 1192.55px; right: 1642.11px;">
-                <div class="box action" style="animation-delay: 3.69252s; animation-duration: 3.72395s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.517349) rotate(5.24818deg); top: 1144.17px; right: 1487.1px;">
-                <div class="box action" style="animation-delay: 3.74862s; animation-duration: 4.51835s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.718395) rotate(6.21594deg); top: 1446.32px; right: 1055.5px;">
-                <div class="box action" style="animation-delay: 1.54037s; animation-duration: 4.09316s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.570691) rotate(2.02042deg); top: 1071.42px; right: 767.778px;">
-                <div class="box action" style="animation-delay: 8.17976s; animation-duration: 4.61799s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.908966) rotate(-2.47856deg); top: 1147.03px; right: 1914.39px;">
-                <div class="box action" style="animation-delay: 1.17161s; animation-duration: 3.35014s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.26114) rotate(5.67101deg); top: 2126.36px; right: 283.786px;">
-                <div class="box" style="animation-delay: 0.556213s; animation-duration: 3.98843s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.957753) rotate(0.734726deg); top: 1765.22px; right: 1532.48px;">
-                <div class="box" style="animation-delay: 5.09086s; animation-duration: 4.18983s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.1001) rotate(6.34848deg); top: 1659.07px; right: 273.061px;">
-                <div class="box action" style="animation-delay: 1.66404s; animation-duration: 4.669s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.13056) rotate(2.03925deg); top: 2107.97px; right: 220.377px;">
-                <div class="box" style="animation-delay: 5.74973s; animation-duration: 3.2348s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.443417) rotate(-0.310908deg); top: 1715.83px; right: 1311.82px;">
-                <div class="box" style="animation-delay: 0.349447s; animation-duration: 4.96649s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.850535) rotate(4.3902deg); top: 1669.93px; right: 1190.37px;">
-                <div class="box action" style="animation-delay: 6.6162s; animation-duration: 3.00474s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.304171) rotate(5.64006deg); top: 1953.9px; right: 220.887px;">
-                <div class="box" style="animation-delay: 1.71378s; animation-duration: 4.84412s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.825712) rotate(7.41224deg); top: 2388.38px; right: 1081.05px;">
-                <div class="box" style="animation-delay: 9.58292s; animation-duration: 3.76452s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.528422) rotate(-0.421318deg); top: 2252.77px; right: 1266.12px;">
-                <div class="box" style="animation-delay: 0.295278s; animation-duration: 3.39382s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.386299) rotate(0.720772deg); top: 1898.08px; right: 47.3966px;">
-                <div class="box" style="animation-delay: 3.41873s; animation-duration: 4.2338s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.508214) rotate(2.7415deg); top: 2378.9px; right: 395.502px;">
-                <div class="box" style="animation-delay: 0.299798s; animation-duration: 3.68044s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.14524) rotate(2.42093deg); top: 1902.44px; right: 210.36px;">
-                <div class="box" style="animation-delay: 5.34155s; animation-duration: 3.37051s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(1.03457) rotate(0.773976deg); top: 2216.06px; right: 1462.62px;">
-                <div class="box" style="animation-delay: 8.06398s; animation-duration: 3.9443s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(1.1972) rotate(-0.907954deg); top: 2386.38px; right: 1871.95px;">
-                <div class="box" style="animation-delay: 2.01286s; animation-duration: 3.96895s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.807724) rotate(2.52136deg); top: 2348.3px; right: 1704.36px;">
-                <div class="box" style="animation-delay: 6.59299s; animation-duration: 3.89214s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.441964) rotate(6.30714deg); top: 2221.9px; right: 979.854px;">
-                <div class="box" style="animation-delay: 1.9312s; animation-duration: 3.39416s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.28651) rotate(1.14553deg); top: 1680.94px; right: 1746.13px;">
-                <div class="box action" style="animation-delay: 6.81082s; animation-duration: 3.38271s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.45692) rotate(-1.1323deg); top: 2321.03px; right: 805.978px;">
-                <div class="box" style="animation-delay: 3.14677s; animation-duration: 4.23043s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.49278) rotate(3.96748deg); top: 1896.84px; right: 792.706px;">
-                <div class="box" style="animation-delay: 8.20638s; animation-duration: 4.76173s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.797464) rotate(5.53523deg); top: 1847.85px; right: 748.757px;">
-                <div class="box" style="animation-delay: 4.98243s; animation-duration: 4.27725s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.654271) rotate(-1.02317deg); top: 2414.83px; right: 178.406px;">
-                <div class="box" style="animation-delay: 5.44298s; animation-duration: 4.89779s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.04224) rotate(1.18157deg); top: 3192.53px; right: 754.549px;">
-                <div class="box" style="animation-delay: 3.54359s; animation-duration: 3.91559s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.562937) rotate(7.36786deg); top: 2737.85px; right: 808.155px;">
-                <div class="box" style="animation-delay: 9.77736s; animation-duration: 4.76986s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.43468) rotate(1.21795deg); top: 2637.8px; right: 465.176px;">
-                <div class="box" style="animation-delay: 2.8839s; animation-duration: 3.85335s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.546342) rotate(-1.00826deg); top: 2816.9px; right: 1184.39px;">
-                <div class="box" style="animation-delay: 1.60103s; animation-duration: 3.78049s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(1.28868) rotate(-0.493303deg); top: 2665.46px; right: 397.085px;">
-                <div class="box" style="animation-delay: 9.64525s; animation-duration: 4.24731s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.965676) rotate(2.99847deg); top: 2405.88px; right: 1708.43px;">
-                <div class="box" style="animation-delay: 2.90665s; animation-duration: 4.75571s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.66098) rotate(0.204341deg); top: 2411.93px; right: 1607.9px;">
-                <div class="box" style="animation-delay: 3.28345s; animation-duration: 4.6833s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.688418) rotate(-1.07557deg); top: 2767.34px; right: 1425.45px;">
-                <div class="box" style="animation-delay: 9.69832s; animation-duration: 3.84226s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.11997) rotate(4.41387deg); top: 3155.38px; right: 929.038px;">
-                <div class="box" style="animation-delay: 4.88189s; animation-duration: 3.11s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.932268) rotate(0.470555deg); top: 2759.34px; right: 1278.4px;">
-                <div class="box" style="animation-delay: 5.23711s; animation-duration: 4.85321s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.812348) rotate(0.305499deg); top: 2535.34px; right: 1453.68px;">
-                <div class="box" style="animation-delay: 5.14179s; animation-duration: 4.48636s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.4171) rotate(-2.1501deg); top: 2739.46px; right: 519.623px;">
-                <div class="box" style="animation-delay: 5.50308s; animation-duration: 3.44869s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.28867) rotate(-1.90956deg); top: 2949.8px; right: 1255.5px;">
-                <div class="box" style="animation-delay: 6.33068s; animation-duration: 4.6596s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.16303) rotate(-1.03616deg); top: 2612.4px; right: 189.304px;">
-                <div class="box" style="animation-delay: 8.52984s; animation-duration: 4.74682s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.0723) rotate(5.23543deg); top: 2618.24px; right: 1723.84px;">
-                <div class="box" style="animation-delay: 9.7038s; animation-duration: 4.99451s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.774756) rotate(4.82621deg); top: 2639.27px; right: 1550.27px;">
-                <div class="box" style="animation-delay: 2.92167s; animation-duration: 3.60639s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.31987) rotate(2.41017deg); top: 3091.08px; right: 823.036px;">
-                <div class="box" style="animation-delay: 6.11345s; animation-duration: 4.6465s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.564188) rotate(-1.09023deg); top: 2682.58px; right: 1827.82px;">
-                <div class="box" style="animation-delay: 1.71475s; animation-duration: 4.01977s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.689223) rotate(2.56093deg); top: 2785.03px; right: 1646.41px;">
-                <div class="box" style="animation-delay: 4.65701s; animation-duration: 3.94166s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.778245) rotate(4.57067deg); top: 3454.33px; right: 1760.19px;">
-                <div class="box" style="animation-delay: 3.29597s; animation-duration: 3.27905s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.536093) rotate(-2.35431deg); top: 3728.08px; right: 935.173px;">
-                <div class="box" style="animation-delay: 1.00267s; animation-duration: 4.54487s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.63103) rotate(3.42111deg); top: 3932.54px; right: 1409.89px;">
-                <div class="box" style="animation-delay: 7.70516s; animation-duration: 3.44319s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.4632) rotate(5.79538deg); top: 3572.18px; right: 85.5852px;">
-                <div class="box" style="animation-delay: 5.14562s; animation-duration: 4.11956s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.368264) rotate(3.07102deg); top: 3928.78px; right: 325.372px;">
-                <div class="box" style="animation-delay: 2.56426s; animation-duration: 3.60936s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.20024) rotate(6.87199deg); top: 3438.64px; right: 1578.03px;">
-                <div class="box" style="animation-delay: 0.137302s; animation-duration: 4.86745s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.691067) rotate(-1.38721deg); top: 3892.21px; right: 823.892px;">
-                <div class="box" style="animation-delay: 6.83742s; animation-duration: 3.52893s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.28321) rotate(2.95933deg); top: 3608.73px; right: 723.708px;">
-                <div class="box" style="animation-delay: 0.442151s; animation-duration: 3.42569s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.39756) rotate(2.10742deg); top: 3710.47px; right: 1231.45px;">
-                <div class="box" style="animation-delay: 9.81805s; animation-duration: 3.39867s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.630031) rotate(5.59485deg); top: 3263.74px; right: 1099.59px;">
-                <div class="box" style="animation-delay: 6.91828s; animation-duration: 3.05929s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(1.31751) rotate(0.229371deg); top: 3380.38px; right: 772.305px;">
-                <div class="box" style="animation-delay: 2.08449s; animation-duration: 3.13884s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.664093) rotate(2.97283deg); top: 3334.68px; right: 316.851px;">
-                <div class="box" style="animation-delay: 0.0473217s; animation-duration: 4.82863s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.964134) rotate(6.50048deg); top: 3866.43px; right: 1001.66px;">
-                <div class="box" style="animation-delay: 6.9324s; animation-duration: 3.26828s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(0.304757) rotate(3.4955deg); top: 3752.3px; right: 1545.73px;">
-                <div class="box" style="animation-delay: 1.51385s; animation-duration: 3.52263s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(1.22774) rotate(-1.20278deg); top: 3822.35px; right: 828.619px;">
-                <div class="box" style="animation-delay: 6.68675s; animation-duration: 4.20355s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.83634) rotate(-0.840718deg); top: 3298.62px; right: 419.897px;">
-                <div class="box" style="animation-delay: 5.42489s; animation-duration: 4.86587s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.672733) rotate(7.37361deg); top: 3612.07px; right: 1197.49px;">
-                <div class="box" style="animation-delay: 6.13177s; animation-duration: 3.33387s;"></div>
-            </div>
-            <div class="meteor"
-                 style="transform: scale(0.351914) rotate(-0.31658deg); top: 3392.39px; right: 42.679px;">
-                <div class="box" style="animation-delay: 8.73405s; animation-duration: 4.82064s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.49533) rotate(2.21148deg); top: 3326.22px; right: 661.679px;">
-                <div class="box" style="animation-delay: 4.02798s; animation-duration: 3.14571s;"></div>
-            </div>
-            <div class="meteor" style="transform: scale(1.1875) rotate(-1.14392deg); top: 3305.22px; right: 1830.91px;">
-                <div class="box" style="animation-delay: 6.52941s; animation-duration: 3.30732s;"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="dowebok" class="fullpage-wrapper" style="height: 100%; position: relative;">
-        <div class="section section1 fp-section fp-table active" style="height: 925px;">
-            <div class="fp-tableCell" style="height: 925px;">
-                <div class="wrap">
-                    <div class="slogan animation1"></div>
-                    <form method="post" enctype="multipart/form-data" class="upload_form">
-                        <div id="upload2" class="upload upload_btn_index animation2">
-                            <div id="file_upload-button" class="uploadify-button"><span
-                                    class="uploadify-button-text"></span></div>
-                        </div>
-                        <div class="upload_tips animation2_1">
-                            <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
-                            <div class="tips_frame" style="display: none;">
-                                <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
-                                <div class="tips_content">
-                                    <div class="tips_title">
-                                        <div class="tips_close"></div>
-                                    </div>
-                                    <div class="tips_main">
-                                        <div class="tips_right">
-                                            <div class="tips_title_letter">支持文件格式：</div>
-                                            <ul>
-                                                <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
-                                                <li>各种压缩包（RAR、ZIP、7z等）</li>
-                                                <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
-                                            </ul>
-                                            <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
-                                            <ul>
-                                                <li>普通用户不超过30MB</li>
-                                                <li>高级用户不超过100MB</li>
-
-                                            </ul>
+            <div class="section section2 fp-section fp-table" style="height: 925px;">
+                <div class="fp-tableCell" style="height: 925px;">
+                    <div class="wrap">
+                        <div class="pic"></div>
+                        <div class="pic_bottom"></div>
+                        <div class="text_title"></div>
+                        <div class="text_info"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section3 fp-section fp-table" style="height: 925px;">
+                <div class="fp-tableCell" style="height: 925px;">
+                    <div class="wrap">
+                        <div class="pic"></div>
+                        <div class="pic_bottom"></div>
+                        <div class="text_title"></div>
+                        <div class="text_info"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section4 fp-section fp-table" style="height: 925px;">
+                <div class="fp-tableCell" style="height: 925px;">
+                    <div class="wrap">
+                        <div class="pic"></div>
+                        <div class="pic_bottom"></div>
+                        <div class="text_title"></div>
+                        <div class="text_info"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section5 fp-section fp-table" style="height: 925px;">
+                <div class="fp-tableCell" style="height: 925px;">
+                    <div class="wrap">
+                        <div class="slogan"></div>
+                        <form method="post" enctype="multipart/form-data">
+                            <div id="upload" class="upload upload_btn_index">
+                                <input id="file_upload" name="fil" type="file" width="208" unselectable="on" onclick="this.form.reset();">
+                            </div>
+                            <div class="upload_tips">
+                                <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
+                                <div class="tips_frame" style="display: none;">
+                                    <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
+                                    <div class="tips_content">
+                                        <div class="tips_title">
+                                            <div class="tips_close"></div>
                                         </div>
-
+                                        <div class="tips_main">
+                                            <div class="tips_right">
+                                                <div class="tips_title_letter">支持文件格式：</div>
+                                                <ul>
+                                                    <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
+                                                    <li>各种压缩包（RAR、ZIP、7z等）</li>
+                                                    <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
+                                                </ul>
+                                                <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
+                                                <ul>
+                                                    <li>普通用户不超过30MB</li>
+                                                    <li>高级用户不超过100MB</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div style="clear:both"></div>
-                    </form>
-                </div>
-                <iframe id="tmp_downloadhelper_iframe" style="display: none;"
-                        src="./saved_resource(1).html"></iframe>
-            </div>
-        </div>
-        <div class="section section2 fp-section fp-table" style="height: 925px;">
-            <div class="fp-tableCell" style="height: 925px;">
-                <div class="wrap">
-                    <div class="pic"></div>
-                    <div class="pic_bottom"></div>
-                    <div class="text_title"></div>
-                    <div class="text_info"></div>
+                        </form>
+                        <div class="foot">Copyright© 2016 .All Rights Reserved<br>版权所有</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="section section3 fp-section fp-table" style="height: 925px;">
-            <div class="fp-tableCell" style="height: 925px;">
-                <div class="wrap">
-                    <div class="pic"></div>
-                    <div class="pic_bottom"></div>
-                    <div class="text_title"></div>
-                    <div class="text_info"></div>
-                </div>
-            </div>
-        </div>
-        <div class="section section4 fp-section fp-table" style="height: 925px;">
-            <div class="fp-tableCell" style="height: 925px;">
-                <div class="wrap">
-                    <div class="pic"></div>
-                    <div class="pic_bottom"></div>
-                    <div class="text_title"></div>
-                    <div class="text_info"></div>
-                </div>
-            </div>
-        </div>
-        <div class="section section5 fp-section fp-table" style="height: 925px;">
-            <div class="fp-tableCell" style="height: 925px;">
-                <div class="wrap">
-                    <div class="slogan"></div>
-                    <form method="post" enctype="multipart/form-data">
-                        <div id="upload" class="upload upload_btn_index">
-                            <div id="file_upload-button" class="uploadify-button"><span
-                                    class="uploadify-button-text"></span></div>
-                        </div>
-                        <div class="upload_tips">
-                            <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
-                            <div class="tips_frame" style="display: none;">
-                                <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
-                                <div class="tips_content">
-                                    <div class="tips_title">
-                                        <div class="tips_close"></div>
-                                    </div>
-                                    <div class="tips_main">
-                                        <div class="tips_right">
-                                            <div class="tips_title_letter">支持文件格式：</div>
-                                            <ul>
-                                                <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
-                                                <li>各种压缩包（RAR、ZIP、7z等）</li>
-                                                <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
-                                            </ul>
-                                            <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
-                                            <ul>
-                                                <li>普通用户不超过30MB</li>
-                                                <li>高级用户不超过100MB</li>
 
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="foot">Copyright© 2016 .All Rights Reserved<br>版权所有</div>
+    </div>
+    <div id="check_fail">
+        <a href="javascript:showDialog.hide();" id="close1" class="close"></a>
+        <div id="check_word_fail" class="check_word_fail"></div>
+    </div>
+    <div id="h5Show" style="display:none;" class="uploadify-queue">
+        <div id="h5-queue-item" class="uploadify-queue-item">
+            <div class="cancel">
+                <a href="javascript:showDialog.hide();" class="close"></a>
+                <span id="fileName" class="fileName"></span>
+                <span id="stateData" class="data"></span>
+                <div id="fileSize"></div>
+                <div id="fileType"></div>
+                <div id="bar" class="uploadify-progress">
+                    <div id="progressbar"></div>
                 </div>
             </div>
         </div>
     </div>
-
-</div>
-<div id="check_fail">
-    <a href="javascript:showDialog.hide();" id="close1" class="close"></a>
-    <div id="check_word_fail" class="check_word_fail"></div>
-</div>
-<div id="h5Show" style="display:none;" class="uploadify-queue">
-    <div id="h5-queue-item" class="uploadify-queue-item">
-        <div class="cancel">
-            <a href="javascript:showDialog.hide();" class="close"></a>
-            <span id="fileName" class="fileName"></span>
-            <span id="stateData" class="data"></span>
-            <div id="fileSize"></div>
-            <div id="fileType"></div>
-            <div id="bar" class="uploadify-progress">
-                <div id="progressbar"></div>
-            </div>
+    <div id="file_upload_suc">
+        <a href="javascript:showDialog.hide();" class="close"></a>
+        <div id="word_suc" class="word_suc">
+            <a href="javascript:void(0)" class="to_ret" onclick="showDetail()"></a>上传成功！正在分析文件，大概需要两分钟...
+            <a href="javascript:void(0)" onclick="email()">完成后邮件通知我</a>
         </div>
     </div>
-</div>
-<div id="file_upload_suc">
-    <a href="javascript:showDialog.hide();" class="close"></a>
-    <div id="word_suc" class="word_suc">
-        <a href="javascript:void(0)" class="to_ret" onclick="showDetail()"></a>上传成功！正在分析文件，大概需要两分钟...
-        <a href="javascript:void(0)" onclick="email()">完成后邮件通知我</a>
+    <div id="file_upload_fail">
+        <a href="javascript:showDialog.hide();" id="close" class="close"></a>
+        <div id="word_fail" class="upload_fail_frame">
+
+        </div>
     </div>
-</div>
-<div id="file_upload_fail">
-    <a href="javascript:showDialog.hide();" id="close" class="close"></a>
-    <div id="word_fail" class="upload_fail_frame">
+    <div id="some_file_queue" class="uploadify-queue" style="display:none"></div>
+    <input type="hidden" name="md5" id="md5">
+    <input type="hidden" name="fuid" id="fuid">
+    <input id="is_login" type="hidden" value="">
 
+    <!--用户申级弹出框-->
+    <div id="User_upgrade">
+        <a href="javascript:showDialog.hide();" id="close3" class="close"></a>
+        <div id="upgrade_word" class="upgrade_word "></div>
+        <a href="javascript:showDialog.hide();" class="btn-defaultUpgrade"></a>
+        <a href="#" class="btn-upgrade" target="_blank"></a><!--跳转到用户申级页面-->
     </div>
-</div>
-<div id="some_file_queue" class="uploadify-queue" style="display:none"></div>
-<input type="hidden" name="md5" id="md5">
-<input type="hidden" name="fuid" id="fuid">
-<input id="is_login" type="hidden" value="">
 
-<!--用户申级弹出框-->
-<div id="User_upgrade">
-    <a href="javascript:showDialog.hide();" id="close3" class="close"></a>
-    <div id="upgrade_word" class="upgrade_word "></div>
-    <a href="javascript:showDialog.hide();" class="btn-defaultUpgrade"></a>
-    <a href="http://wj.qq.com/survey.html?type=survey&amp;id=179076&amp;hash=f872" class="btn-upgrade"
-       target="_blank"></a><!--跳转到用户申级页面-->
-</div>
-
+<script type="text/javascript" src="../static/js/new.js"></script>
+<script type="text/javascript" src="../static/js/json.js"></script>
+<script type="text/javascript" src="../static/js/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="../static/js/uploadSuccess.js"></script>
+<script type="text/javascript" src="../static/js/commo.js"></script>
+<script type="text/javascript" src="../static/js/upload.js"></script>
+<script type="text/javascript" src="../static/js/jquery-ui-1.8.4.custom.min.js"></script>
 
 <script type="text/javascript">
     //页面刷新时强行回到顶端
@@ -659,7 +620,5 @@
             }
     );
 </script>
-
-
 </body>
 </html>

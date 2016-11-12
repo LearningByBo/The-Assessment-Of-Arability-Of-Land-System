@@ -1,23 +1,15 @@
 $(document).ready(function(){
-	if(isLogin()){
-		if(window.File && window.FileList && window.FileReader){
-			$("#button-text").css("display","block");
-      		$("#file_upload").bind("change",function(){
-      			fileSelected($(this).get(0));
-      		});
-      		$("#file_upload2").bind("change",function(){
-      			fileSelected($(this).get(0));
-            });
-        } else{
-        	initUpload("file_upload",208,59,"");
-        	initUpload("file_upload2",208,59,"");
-        }
-	}else{
-		$(".upload_btn_index").html("<div id='file_upload-button' class='uploadify-button'><span class='uploadify-button-text'></span></div>");
-		//$("#upload").html("<div id='file_upload-button' class='uploadify-button'><span class='uploadify-button-text'></span></div>");
-		$(".uploadify-button").bind("click",function(){
-			MGR.showLogin();
-		})
+	if(window.File && window.FileList && window.FileReader){
+		$("#button-text").css("display","block");
+		$("#file_upload").bind("change",function(){
+			fileSelected($(this).get(0));
+		});
+		$("#file_upload2").bind("change",function(){
+			fileSelected($(this).get(0));
+		});
+	} else{
+		initUpload("file_upload",208,59,"");
+		initUpload("file_upload2",208,59,"");
 	}
 	$(".upload_detail_btn").bind("click",function(){
 		$(this).next().show();

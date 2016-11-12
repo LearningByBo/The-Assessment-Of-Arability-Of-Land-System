@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>耕地地力评价系统-评价结果</title>
+
+<script src="../static/js/jquery-1.8.3.min.js"></script>
+<link href="../static/css/comm.css" rel="stylesheet" type="text/css">
+<link href="../static/css/head.css" rel="stylesheet">
+<script language="javascript" src="../static/js/tcss.ping.https.js"></script>
+<script language="javascript" src="../static/js/detail_nav.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	//建议ie8以上浏览器
+	var w = document.body.scrollWidth;
+    $("#tip").width(w);
+
+	var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+
+    var s;
+    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+    (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+    (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+    (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+    (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+    var t = ua.match(/trident/);
+    if (Sys.ie){
+	    var sys = null;
+		sys = Sys.ie;
+		var v = parseInt(sys);
+		if(v < 8){
+			document.getElementById("tip").style.display = "block";
+		//	setTimeout(function(){ document.getElementById("tip").style.display = "none"; },10000);
+		}
+	}
+
+    $("#image").bind("click",function(){
+		document.getElementById("tip").style.display = "none";
+	})
+})
+
+</script>
+
+
+</head>
+<body >
+	<div id="tip" style="width: 1918px;">
+		<span class="tip">建议使用IE8以上版本或其他浏览器</span> <img src="../static/images/close.png" id="image">
+	</div>
+	<div id="orientation_tip">
+	    <span class="tip">建议使用横屏浏览</span> <span style="" id="image2"><img src="../static/images/close(1).png" style="margin: 20px 0 0 20px"></span>
+	</div>
+	<div style="background: #FFF; width: 100%">
+		<div class="top">
+			<div class="wtitle">
+				<a href=""><img src="../static/images/head_title.png" height="90" style="border:0"></a>
+			</div>
+			<ul style="margin-right:20px">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">信息录入</a></li>
+			</ul>
+			<div class="nick_nologin">
+				<div id="nologin" style="display: none;">
+					<a href="admin">登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="check_fail">
+		<a href="javascript:showDialog.hide();" id="close" class="close"></a>
+		<div id="check_word_fail" class="check_word_fail"></div>
+	</div>
+
+    <script type="text/javascript" src="../static/js/userLogin.js"></script>
+    <script type="text/javascript" src="../static/js/showDialog.fix.js"></script>
+    <!--<script src="../static/js/showpic.js" type="text/javascript"></script>-->
+    <link href="../static/css/detail.css" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/showpic.css">-->
+
+    <div class="loginframe" id="loginframe">
+        <iframe name="login_ifr" id="login_ifr" frameborder="0" scrolling="no" width="100%" height="100%" src="saved_resource.html"></iframe>
+    </div>
+    <div id="append_parent"></div>
+    <script>
+        $(document).ready(function(){
+            var md5 = "8a0597225f9d4f55e16e4caa73248af7";
+            var pk = "ADYGZV1rB2MIPVs8";
+            var sys = "";
+            var status = "processing"
+            loadData(md5,pk,sys);
+            var interval = setInterval(function(){
+                loadData(md5,pk,sys);
+            }, 10000);
+            function loadData(md5,pk,sys)
+            {
+                /* $.ajax({
+                    url:"file/detailcontent?pk=ADYGZV1rB2MIPVs8",
+                    dataType:"json",
+                    success:function(r){
+                        if(r["status"] == "processed") {
+                            if(status=="processing") {
+                                $("title").html("耕地地力评价系统-已完成");
+                            }else{
+                                $("title").html("耕地地力评价系统");
+                            }
+                            clearInterval(interval);
+                        }
+
+                        $("#detail_frame").html(r["data"]);
+                        if(location.hash != "") {
+                            $("body,html").animate({scrollTop:$(location.hash).offset().top});
+                        }
+                    }
+                }); */
+            }
+    //$("title").html("耕地地力评价系统-正在分析...");
+    var time = 1;
+    setInterval(runDot,800);
+
+    function runDot()
+    {
+        var dot = "";
+
+        for(var i=0; i<time;i++) {
+            dot += ".";
+        }
+        time ++;
+        time = time % 4;
+        $("#frame_banner_dot").html(dot);
+    }
+    });
+	</script>
+    <div id="detail_frame"><div class="banner">
+        <div class="banner_in">
+            <div class="ret_info">
+                <div class="info1" style="margin: 0">文件检测评级：</div>
+                <div class="info5">
+                    <div class="yellow color">未发现风险</div>
+                    <div class="banner_bar_bg">
+                        <div class="banner_bar banner_bar_yellow"></div>
+                        <div class="selection_bar selection_yellow"></div>
+                    </div>
+
+                </div>
+                <p class="info3" style="background: url(https://habo.qq.com/Assets/images/fico_other.png) no-repeat;padding-left:40px">
+                    文件名称：
+                    <span title="The_Django_Book_2.0中文译本.pdf">The_Django_Book_2.0中文译本.pdf </span>
+                </p>
+                <p class="info2" style="margin:15px 0 0 0"></p>
+            </div>
+            <div class="banner_right">
+                <a class="upload" href="index">上传分析其他文件&gt;</a>
+            </div>
+        </div>
+    </div>
+    <div id="User_upgrade">
+        <a href="javascript:showDialog.hide();" id="close3" class="close"></a>
+        <div id="upgrade_word" class="upgrade_word "></div>
+        <a href="javascript:showDialog.hide();" class="btn-defaultUpgrade"></a>
+        <a href="#" target="_blank" class="btn-upgrade"></a><!--跳转到用户申级页面-->
+    </div>
+    <div class="main">
+        <div class="sub">
+            <ul style=" background-position: 80px 0px;">
+                <li class="set"><a href="#baseinfo" class="set">基本信息</a></li>
+                <li><a href="#keyinfo" class="">关键行为</a></li>
+                <li><a href="#process" class="">进程行为</a></li>
+                <li><a href="#file" class="">文件行为</a></li>
+                <li><a href="#net">网络行为</a></li>
+                <li><a href="#reg">注册表行为</a></li>
+                <li><a href="#other">其他行为</a></li>
+            </ul>
+        </div>
+        <div class="main_info">
+            <div id="baseinfo">
+                <h3 class="step">
+                    <span>基本信息</span>
+                </h3>
+                <div class="tab">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">文件名称：</td>
+                                <td style="width:80%">
+                                    <p title="The_Django_Book_2.0中文译本.pdf">
+                                        The_Django_Book_2.0中文译本.pdf
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MD5：</td>
+                                <td>8a0597225f9d4f55e16e4caa73248af7</td>
+                            </tr>
+                            <tr>
+                                <td>文件类型：</td>
+                                <td>PDF</td>
+                            </tr>
+                            <tr>
+                                <td>上传时间：</td>
+                                <td>2016-11-05 15:31:58</td>
+                            </tr>
+                            <tr>
+                                <td>出品公司：</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>版本：</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>壳或编译器信息：</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td nowrap="nowrap" style="vertical-align:top">子文件信息：</td>
+                                <td style="word-wrap:break-word;word-break:break-all"><a id="moreinfo" style="cursor:pointer">详情</a>
+                                    <div id="subinfo" style="display:none">
+                                    <div class="tab">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr class="even">
+                                                <td>PDF-STREAM-0dumpFile/e94089c2bb01aa58857c1181bafbfa6a&nbsp;/Unknown</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div id="keyinfo">
+                <h3 class="step">
+                    <span>关键行为</span>
+                </h3>
+                <div class="tab">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="red">
+                        <tbody>
+                            <tr>
+                                <td width="60">行为描述：</td>
+                                <td>跨进程写入数据	</td>
+                            </tr>
+                            <tr>
+                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
+                                <td style="word-wrap:break-word;word-break:break-all">
+                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050000, Size = 0x00000020">
+                                       TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050000, Size = 0x00000020
+                                   </p>
+                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050020, Size = 0x00000034">
+                                        TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050020, Size = 0x00000034
+                                   </p>
+                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x7ffde238, Size = 0x00000004">
+                                       TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x7ffde238, Size = 0x00000004
+                                   </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60">行为描述：</td>
+                                <td>设置特殊文件夹属性</td>
+                            </tr>
+                            <tr>
+                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
+                                <td style="word-wrap:break-word;word-break:break-all">
+                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5">
+                                       C:\Users\Administrator\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5
+                                   </p>
+                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies">
+                                       C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies
+                                   </p>
+                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Local\Microsoft\Windows\History\History.IE5">
+                                       C:\Users\Administrator\AppData\Local\Microsoft\Windows\History\History.IE5
+                                   </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60">行为描述：</td>
+                                <td>获取窗口截图信息</td>
+                            </tr>
+                            <tr>
+                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
+                                <td style="word-wrap:break-word;word-break:break-all">
+                                    <p style="width:710px;height:25px;overflow:hidden" title="Foreground window Info: HWND = 0x00000000, DC = 0x7001020c.">
+                                        Foreground window Info: HWND = 0x00000000, DC = 0x7001020c.
+                                    </p>
+                                    <p style="width:710px;height:25px;overflow:hidden" title="Foreground window Info: HWND = 0x00000000, DC = 0x040108f3.">
+                                        Foreground window Info: HWND = 0x00000000, DC = 0x040108f3.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="60">行为描述：</td>
+                                <td>  检测自身是否被调试	</td>
+                            </tr>
+                            <tr>
+                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
+                                <td style="word-wrap:break-word;word-break:break-all">
+                                    <p style="width:710px;height:25px;overflow:hidden" title="N/A">
+                                        N/A
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="process">
+                <h3 class="step">
+                    <span>进程行为</span>
+                </h3>
+                <div class="tab">
+                    <ul>
+                        <li>创建进程</li>
+                        <li>枚举进程</li>
+                        <li>跨进程写入数据</li>
+                    </ul>
+                <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                </div>
+            </div>
+            <div id="file">
+                <h3 class="step">
+                    <span>文件行为</span>
+                </h3>
+                <div class="tab">
+                    <ul>
+                        <li>创建文件</li>
+                        <li>创建可执行文件</li>
+                        <li>覆盖已有文件</li>
+                        <li>查找文件</li>
+                        <li>删除文件</li>
+                        <li>设置特殊文件夹属性</li>
+                        <li>修改文件内容</li>
+                    </ul>
+                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                </div>
+            </div>
+            <div id="net">
+                <h3 class="step">
+                    <span>网络行为</span>
+                </h3>
+                <div class="tab">
+                    <ul>
+                        <li>联网打开网址</li>
+                        <li>下载文件</li>
+                        <li>连接指定站点</li>
+                        <li>打开HTTP连接</li>
+                        <li>建立到一个指定的套接字连接</li>
+                        <li>读取网络文件</li>
+                        <li>发送HTTP包</li>
+                        <li>打开HTTP请求</li>
+                        <li>按名称获取主机地址</li>
+                    </ul>
+                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                </div>
+            </div>
+            <div id="reg">
+                <h3 class="step">
+                    <span>注册表行为</span>
+                </h3>
+                <div class="tab">
+                    <ul>
+                        <li>修改注册表</li>
+                        <li>删除注册表键值</li>
+                        <li>删除注册表键</li>
+                    </ul>
+                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                </div>
+            </div>
+            <div id="other">
+                <h3 class="step">
+                    <span>其他行为</span>
+                </h3>
+                <div class="tab">
+                    <ul>
+                        <li>检测自身是否被调试</li>
+                        <li>创建互斥体</li>
+                        <li>隐藏指定窗口</li>
+                        <li>窗口信息</li>
+                        <li>查找指定窗口</li>
+                        <li>打开事件</li>
+                        <li>枚举窗口</li>
+                        <li>获取窗口截图信息</li>
+                        <li>可执行文件签名信息</li>
+                        <li>可执行文件MD5</li>
+                        <li>打开互斥体</li>
+                    </ul>
+                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <iframe id="tmp_downloadhelper_iframe" style="display: none;" src="saved_resource(1).html"></iframe>
+    </div>
+<div class="foot" style="position: relative">
+	<div style="width: 1000px; margin: 0 auto">
+		Copyright© 2016 .All Rights Reserved<br> 版权所有
+	</div>
+</div>
+<script type="text/javascript">
+	  $(document).ready( function() {
+	    $(".main").jumpto();
+	  });
+
+</script>
+</body></html>
