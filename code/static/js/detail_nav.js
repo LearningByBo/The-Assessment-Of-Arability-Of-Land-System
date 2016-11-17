@@ -50,8 +50,12 @@
             });
             if ($(document).scrollTop() > settings.offset) {
                 $(".sub").addClass("fixed");
+                //alert($(".main").width())
+                var right = $(".main").width() - $(".sub.fixed").width() - $(".main_info").width();
+                $(".sub.fixed").css("right",right +"px");
             } else {
                 $(".sub").removeClass("fixed");
+                $(".sub").css("right","0px");
             }
         }
 

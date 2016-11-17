@@ -7,6 +7,7 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import classification_report
 from sklearn.cross_validation import train_test_split
 
+
 # Create your models here.
 class Factor(models.Model):
     organic_matter = models.IntegerField()
@@ -16,10 +17,11 @@ class Factor(models.Model):
     land_capability = models.IntegerField()
 
     # function __unicode__ must return a string value , or may get a error like : coercing to Unicode: need string or buffer, int found
-    def __unicode__ (self):
+    def __unicode__(self):
         return self.organic_matter.__str__() + self.total_nitrogen.__str__() + self.available_P.__str__() + self.available_K.__str__() + self.land_capability.__str__()
 
-    def generate_DesicionTree(self):
+    @staticmethod
+    def generate_DesicionTree():
         # 数据读入
         data = []
         labels = []
@@ -64,5 +66,19 @@ class Factor(models.Model):
         answer = clf.predict(x)
         print answer
         print y
-        print(classification_report(y, answer, target_names = ['class 1', 'class 2', 'class 3', 'class 4', 'class 5', 'class 6']))
+        print(classification_report(y, answer,
+                                    target_names=['class 1', 'class 2', 'class 3', 'class 4', 'class 5', 'class 6']))
+        return clf
 
+
+    @staticmethod
+    def predict_data(organic_matter, total_nitrogen, available_p, available_k):
+        temp = []
+        temp.append(organic_matter)
+        temp.append(total_nitrogen)
+        temp.append(available_p)
+        temp.append(available_k)
+        x = np.array(temp)
+        clf = Factor.generate_DesicionTree()
+        answer = clf.predict(x)
+        return answer
