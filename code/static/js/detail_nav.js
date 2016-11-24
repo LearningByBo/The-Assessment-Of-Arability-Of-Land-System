@@ -31,12 +31,12 @@
             el = $(this),
             selectors = "";
         selectors += "#" + "baseinfo" + ", ";
-        selectors += "#" + "keyinfo" + ", ";
-        selectors += "#" + "process" + ", ";
-        selectors += "#" + "file" + ", ";
-        selectors += "#" + "net" + ", ";
-        selectors += "#" + "reg" + ", ";
-        selectors += "#" + "other" + ", ";
+        selectors += "#" + "natrueinfo" + ", ";
+        selectors += "#" + "management" + ", ";
+        selectors += "#" + "fertilization" + ", ";
+        selectors += "#" + "reasonable" + ", ";
+        selectors += "#" + "change" + ", ";
+        selectors += "#" + "improve" + ", ";
 
         redrawMenu = function () {
             //alert(selectors.slice(0,9));
@@ -51,7 +51,8 @@
             if ($(document).scrollTop() > settings.offset) {
                 $(".sub").addClass("fixed");
                 //alert($(".main").width())
-                var right = $(".main").width() - $(".sub.fixed").width() - $(".main_info").width();
+                var right = $("#detail_frame").width() - $(".main").width();
+                right = right / 2;
                 $(".sub.fixed").css("right",right +"px");
             } else {
                 $(".sub").removeClass("fixed");

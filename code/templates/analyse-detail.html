@@ -113,9 +113,9 @@ $(function(){
     <div id="detail_frame"><div class="banner">
         <div class="banner_in">
             <div class="ret_info">
-                <div class="info1" style="margin: 0">文件检测评级：</div>
+                <div class="info1" style="margin: 0">耕地地力评价：</div>
                 <div class="info5">
-                    <div class="yellow color">未发现风险</div>
+                    <div class="yellow color">X 级地</div>
                     <div class="banner_bar_bg">
                         <div class="banner_bar banner_bar_yellow"></div>
                         <div class="selection_bar selection_yellow"></div>
@@ -123,8 +123,8 @@ $(function(){
 
                 </div>
                 <p class="info3" style="background: url(../static/images/fico_other.png) no-repeat;padding-left:40px">
-                    文件名称：
-                    <span title="The_Django_Book_2.0中文译本.pdf">The_Django_Book_2.0中文译本.pdf </span>
+                    信息来源：
+                    <span title="The_Django_Book_2.0中文译本.pdf">xxx </span>
                 </p>
                 <p class="info2" style="margin:15px 0 0 0"></p>
             </div>
@@ -136,230 +136,251 @@ $(function(){
     <div class="main">
         <div class="sub">
             <ul style=" background-position: 80px 0px;">
-                <li class="set"><a href="#baseinfo" class="set">基本信息</a></li>
-                <li><a href="#keyinfo" class="">关键行为</a></li>
-                <li><a href="#process" class="">进程行为</a></li>
-                <li><a href="#file" class="">文件行为</a></li>
-                <li><a href="#net">网络行为</a></li>
-                <li><a href="#reg">注册表行为</a></li>
-                <li><a href="#other">其他行为</a></li>
+                <li class="set"><a href="#baseinfo" class="set">耕地基本信息</a></li>
+                <li><a href="#natrueinfo" class="">耕地自然因素</a></li>
+                <li><a href="#management" class="">耕作管理情况</a></li>
+                <li><a href="#fertilization" class="">耕地施肥情况</a></li>
+                <li><a href="#reasonable">利用合理程度</a></li>
+                <li><a href="#change">更改可能用途</a></li>
+                <li><a href="#improve">改善地力措施</a></li>
             </ul>
         </div>
         <div class="main_info">
             <div id="baseinfo">
                 <h3 class="step">
-                    <span>基本信息</span>
+                    <span>耕地基本信息</span>
                 </h3>
                 <div class="tab">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
-                            <tr>
-                                <td class="tdwid" style="width:20%">文件名称：</td>
-                                <td style="width:80%">
-                                    <p title="The_Django_Book_2.0中文译本.pdf">
-                                        The_Django_Book_2.0中文译本.pdf
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>MD5：</td>
-                                <td>8a0597225f9d4f55e16e4caa73248af7</td>
-                            </tr>
-                            <tr>
-                                <td>文件类型：</td>
-                                <td>PDF</td>
-                            </tr>
-                            <tr>
-                                <td>上传时间：</td>
-                                <td>2016-11-05 15:31:58</td>
-                            </tr>
-                            <tr>
-                                <td>出品公司：</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>版本：</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>壳或编译器信息：</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td nowrap="nowrap" style="vertical-align:top">子文件信息：</td>
-                                <td style="word-wrap:break-word;word-break:break-all"><a id="moreinfo" style="cursor:pointer">详情</a>
-                                    <div id="subinfo" style="display:none">
-                                    <div class="tab">
-                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                        <tbody>
-                                            <tr class="even">
-                                                <td>PDF-STREAM-0dumpFile/e94089c2bb01aa58857c1181bafbfa6a&nbsp;/Unknown</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="tdwid" style="width:20%">耕地名称：</td>
+                                    <td style="width:80%">
+                                        <p title="fieldname">
+                                            fieldname
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>耕地类别：</td>
+                                    <td>type</td>
+                                </tr>
+                                <tr>
+                                    <td>有机质含量：</td>
+                                    <td>organic_matter</td>
+                                </tr>
+                                <tr>
+                                    <td>全氮含量：</td>
+                                    <td>total_nitrogen</td>
+                                </tr>
+                                <tr>
+                                    <td>速效磷含量：</td>
+                                    <td>available_P</td>
+                                </tr>
+                                <tr>
+                                    <td>速效钾含量：</td>
+                                    <td>available_K</td>
+                                </tr>
+                                <tr>
+                                    <td>耕地地力评估：</td>
+                                    <td>land_capability</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
             </div>
-            <div id="keyinfo">
+            <div id="natrueinfo">
                 <h3 class="step">
-                    <span>关键行为</span>
+                    <span>耕地自然因素</span>
                 </h3>
                 <div class="tab">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="red">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td width="60">行为描述：</td>
-                                <td>跨进程写入数据	</td>
-                            </tr>
-                            <tr>
-                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
-                                <td style="word-wrap:break-word;word-break:break-all">
-                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050000, Size = 0x00000020">
-                                       TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050000, Size = 0x00000020
-                                   </p>
-                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050020, Size = 0x00000034">
-                                        TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x00050020, Size = 0x00000034
-                                   </p>
-                                    <p style="width:710px;height:25px;overflow:hidden" title="TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x7ffde238, Size = 0x00000004">
-                                       TargetProcess = C:\Program Files\Common Files\Adobe\ARM\1.0\AdobeARM.exe, WriteAddress = 0x7ffde238, Size = 0x00000004
-                                   </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="60">行为描述：</td>
-                                <td>设置特殊文件夹属性</td>
-                            </tr>
-                            <tr>
-                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
-                                <td style="word-wrap:break-word;word-break:break-all">
-                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5">
-                                       C:\Users\Administrator\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5
-                                   </p>
-                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies">
-                                       C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Cookies
-                                   </p>
-                                    <p style="width:710px;height:25px;overflow:hidden" title="C:\Users\Administrator\AppData\Local\Microsoft\Windows\History\History.IE5">
-                                       C:\Users\Administrator\AppData\Local\Microsoft\Windows\History\History.IE5
-                                   </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="60">行为描述：</td>
-                                <td>获取窗口截图信息</td>
-                            </tr>
-                            <tr>
-                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
-                                <td style="word-wrap:break-word;word-break:break-all">
-                                    <p style="width:710px;height:25px;overflow:hidden" title="Foreground window Info: HWND = 0x00000000, DC = 0x7001020c.">
-                                        Foreground window Info: HWND = 0x00000000, DC = 0x7001020c.
-                                    </p>
-                                    <p style="width:710px;height:25px;overflow:hidden" title="Foreground window Info: HWND = 0x00000000, DC = 0x040108f3.">
-                                        Foreground window Info: HWND = 0x00000000, DC = 0x040108f3.
+                                <td class="tdwid" style="width:20%">地形：</td>
+                                <td style="width:80%">
+                                    <p title="terrain">
+                                        terrain
                                     </p>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="60">行为描述：</td>
-                                <td>  检测自身是否被调试	</td>
+                                <td>植被：</td>
+                                <td>vegetation</td>
                             </tr>
                             <tr>
-                                <td width="1%" nowrap="nowrap" style="vertical-align:top">详情信息：</td>
-                                <td style="word-wrap:break-word;word-break:break-all">
-                                    <p style="width:710px;height:25px;overflow:hidden" title="N/A">
-                                        N/A
-                                    </p>
-                                </td>
+                                <td>气候：</td>
+                                <td>climate</td>
+                            </tr>
+                            <tr>
+                                <td>水文：</td>
+                                <td>hydrology</td>
+                            </tr>
+                            <tr>
+                                <td>光照强度：</td>
+                                <td>Illumination  intensity</td>
+                            </tr>
+                            <tr>
+                                <td>光照时间：</td>
+                                <td>Illumination time</td>
+                            </tr>
+                            <tr>
+                                <td>风向风速：</td>
+                                <td>Wind direction & wind speed</td>
+                            </tr>
+                            <tr>
+                                <td>病虫草害情况：</td>
+                                <td>Plant diseases and insect pests</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div id="process">
+            <div id="management">
                 <h3 class="step">
-                    <span>进程行为</span>
+                    <span>耕作管理情况</span>
                 </h3>
                 <div class="tab">
-                    <ul>
-                        <li>创建进程</li>
-                        <li>枚举进程</li>
-                        <li>跨进程写入数据</li>
-                    </ul>
-                <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">耕作物：</td>
+                                <td style="width:80%">
+                                    <p title="Cultivated crops">
+                                        Cultivated crops
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>耕作周期：</td>
+                                <td>Cultivation cycle</td>
+                            </tr>
+                            <tr>
+                                <td>耕作物：</td>
+                                <td>Cultivated crops</td>
+                            </tr>
+                            <tr>
+                                <td>耕作周期：</td>
+                                <td>Cultivation cycle</td>
+                            </tr>
+                            <tr>
+                                <td>耕作物：</td>
+                                <td>Cultivated crops</td>
+                            </tr>
+                            <tr>
+                                <td>耕作周期：</td>
+                                <td>Cultivation cycle</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div id="file">
+            <div id="fertilization">
                 <h3 class="step">
-                    <span>文件行为</span>
+                    <span>耕地施肥情况</span>
                 </h3>
                 <div class="tab">
-                    <ul>
-                        <li>创建文件</li>
-                        <li>创建可执行文件</li>
-                        <li>覆盖已有文件</li>
-                        <li>查找文件</li>
-                        <li>删除文件</li>
-                        <li>设置特殊文件夹属性</li>
-                        <li>修改文件内容</li>
-                    </ul>
-                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">化肥量：</td>
+                                <td style="width:80%">
+                                    <p title="chemical fertilizer">
+                                        chemical fertilizer
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>农肥量：</td>
+                                <td>Manure</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div id="net">
+            <div id="reasonable">
                 <h3 class="step">
-                    <span>网络行为</span>
+                    <span>利用合理程度</span>
                 </h3>
                 <div class="tab">
-                    <ul>
-                        <li>联网打开网址</li>
-                        <li>下载文件</li>
-                        <li>连接指定站点</li>
-                        <li>打开HTTP连接</li>
-                        <li>建立到一个指定的套接字连接</li>
-                        <li>读取网络文件</li>
-                        <li>发送HTTP包</li>
-                        <li>打开HTTP请求</li>
-                        <li>按名称获取主机地址</li>
-                    </ul>
-                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">合理程度评价：</td>
+                                <td style="width:80%">
+                                    <p title="Evaluation of rational ">
+                                        Evaluation of rational
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>理由：</td>
+                                <td>Reason</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div id="reg">
+            <div id="change">
                 <h3 class="step">
-                    <span>注册表行为</span>
+                    <span>更改可能用途</span>
                 </h3>
                 <div class="tab">
-                    <ul>
-                        <li>修改注册表</li>
-                        <li>删除注册表键值</li>
-                        <li>删除注册表键</li>
-                    </ul>
-                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">耕地可更改用途为：</td>
+                                <td style="width:80%">
+                                    <p title="Change for xxx">
+                                        Change for xxx
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>可能性：</td>
+                                <td>Possibility</td>
+                            </tr>
+                            <tr>
+                                <td>条件：</td>
+                                <td>Condition</td>
+                            </tr>
+                            <tr>
+                                <td>耕地可更改用途为：</td>
+                                <td>Change for xxx</td>
+                            </tr>
+                            <tr>
+                                <td>可能性：</td>
+                                <td>Possibility</td>
+                            </tr>
+                            <tr>
+                                <td>条件：</td>
+                                <td>Condition</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div id="other">
+            <div id="improve">
                 <h3 class="step">
-                    <span>其他行为</span>
+                    <span>改善地力措施</span>
                 </h3>
                 <div class="tab">
-                    <ul>
-                        <li>检测自身是否被调试</li>
-                        <li>创建互斥体</li>
-                        <li>隐藏指定窗口</li>
-                        <li>窗口信息</li>
-                        <li>查找指定窗口</li>
-                        <li>打开事件</li>
-                        <li>枚举窗口</li>
-                        <li>获取窗口截图信息</li>
-                        <li>可执行文件签名信息</li>
-                        <li>可执行文件MD5</li>
-                        <li>打开互斥体</li>
-                    </ul>
-                    <div><a href="javascript:void(0);" class="detail_more">更多&gt;&gt;</a></div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>主要改善耕地元素的缺乏，可通过调整施肥的量来调整</td>
+                            </tr>
+                            <tr>
+                                <td>调整耕作物和耕作周期</td>
+                            </tr>
+                            <tr>
+                                <td>增加相关用途，充分利用土地</td>
+                            </tr>
+                            <tr>
+                                <td>从可持续发展的角度去使用土地</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
