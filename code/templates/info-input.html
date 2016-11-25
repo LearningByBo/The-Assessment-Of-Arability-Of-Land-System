@@ -45,7 +45,7 @@ $(function(){
 
 
 </head>
-<body >
+<body>
 	<div id="tip" style="width: 1918px;">
 		<span class="tip">建议使用IE8以上版本或其他浏览器</span> <img src="../static/images/close.png" id="image">
 	</div>
@@ -110,15 +110,17 @@ $(function(){
     //$("title").html("耕地地力评价系统-正在分析...");
     });
 	</script>
-    <div id="detail_frame"><div class="banner" style="height: 240px">
-        <div class="banner_in">
-            <div class="ret_info">
-                <div class="info1" style="margin: 0;font-size: 23px">耕地信息相关说明：</div>
-                <div class="info5" style="height: auto;font-size: 23px;font-weight: bold;padding: 5px 0 0 0">
-                    <div class="yellow color">进行耕地地力的评价涉及多个方面，但本系统主要通过四个方面进行评估：有机质，全氮，速效磷，速效钾。<br/>本系统会对用户所输入的数据进行一系列处理，并得出最终的评价结果 <br/>PS:请用户输入相关数据时，注意数据的相关单位并进行必要的换算</div>
+    <div id="detail_frame">
+        <div class="banner" style="height: 240px">
+            <div class="banner_in">
+                <div class="ret_info">
+                    <div class="info1" style="margin: 0;font-size: 23px">耕地信息相关说明：</div>
+                    <div class="info5" style="height: auto;font-size: 23px;font-weight: bold;padding: 5px 0 0 0">
+                        <div class="yellow color">进行耕地地力的评价涉及多个方面，但本系统主要通过四个方面进行评估：有机质，全氮，速效磷，速效钾。<br/>本系统会对用户所输入的数据进行一系列处理，并得出最终的评价结果 <br/>PS:请用户输入相关数据时，注意数据的相关单位并进行必要的换算</div>
+                    </div>
                 </div>
-            </div>
-            <div class="banner_right">
+                <div class="banner_right">
+                </div>
             </div>
         </div>
     </div>
@@ -128,36 +130,219 @@ $(function(){
 
     <div class="main">
         <div class="main_info">
+            <p style="color: #8a6d3b;padding-left: 250px;font-size: 36px" >{{ mess }}</p>
             <form class="form-horizontal" role="form" action="analyse" method="post" >
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">土壤名称(name)</label>
+                    <label for="inputEarth_type" class="col-sm-2 control-label">土壤类别</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" >
+                        <select class="form-control" id="inputEarth_type" name="earth_type" >
+                            <option>砖红壤</option>
+                            <option>赤红壤</option>
+                            <option>红壤</option>
+                            <option>黄壤</option>
+                            <option>黄棕壤</option>
+                            <option>棕壤</option>
+                            <option>暗棕壤</option>
+                            <option>寒棕壤</option>
+                            <option>褐土</option>
+                            <option>黑钙土</option>
+                            <option>栗钙土</option>
+                            <option>棕钙土</option>
+                            <option>黑垆土</option>
+                            <option>荒漠土</option>
+                            <option>草甸土</option>
+                            <option>漠土</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputOrganic_Matter" class="col-sm-2 control-label">有机质(organic_matter)</label>
+                    <label for="inputField_type" class="col-sm-2 control-label">耕地类别</label>
                     <div class="col-sm-10">
+                        <select class="form-control" id="inputField_type" name="field_type" >
+                            <option>水田</option>
+                            <option>望天田</option>
+                            <option>水浇田</option>
+                            <option>旱地</option>
+                            <option>菜地</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputOrganic_Matter" class="col-sm-2 control-label">有机质</label>
+                    <div class="col-sm-8">
                         <input type="text" class="form-control" id="inputOrganic_Matter" name="organic_matter" placeholder="Organic_Matter">
                     </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：g/kg)</h4>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputTotal_Nitrogen" class="col-sm-2 control-label">全氮(total_nitrogen)</label>
-                    <div class="col-sm-10">
+                    <label for="inputTotal_Nitrogen" class="col-sm-2 control-label">全氮</label>
+                    <div class="col-sm-8">
                         <input type="text" class="form-control" id="inputTotal_Nitrogen" name="total_nitrogen" placeholder="Total_Nitrogen">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputAvailable_P" class="col-sm-2 control-label">速效磷(available_P)</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputAvailable_P" name="available_P" placeholder="Available_P">
+                    <div class="col-sm-2">
+                        <h4>(单位：g/kg)</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAvailable_K" class="col-sm-2 control-label">速效钾(available_K)</label>
-                    <div class="col-sm-10">
+                    <label for="inputAvailable_P" class="col-sm-2 control-label">速效磷</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputAvailable_P" name="available_P" placeholder="Available_P">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：g/kg)</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAvailable_K" class="col-sm-2 control-label">速效钾</label>
+                    <div class="col-sm-8">
                         <input type="text" class="form-control" id="inputAvailable_K" name="available_K" placeholder="Available_K">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：g/kg)</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTerrain" class="col-sm-2 control-label">地形</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputTerrain" name="terrain" >
+                            <option>高原</option>
+                            <option>山地</option>
+                            <option>丘陵</option>
+                            <option>平原</option>
+                            <option>盆地</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputVegetation" class="col-sm-2 control-label">植被</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputVegetation" name="vegetation" >
+                            <option>草原</option>
+                            <option>荒漠</option>
+                            <option>热带雨林</option>
+                            <option>常绿阔叶林</option>
+                            <option>落叶阔叶林</option>
+                            <option>针叶林</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputClimate" class="col-sm-2 control-label">气候</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputClimate" name="climate" >
+                            <option>热带季风气候</option>
+                            <option>亚热带季风气候</option>
+                            <option>温带季风气候</option>
+                            <option>温带大陆性气候</option>
+                            <option>高原山地气候</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputIllumination_intensity" class="col-sm-2 control-label">光照强度</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputIllumination_intensity" name="illumination_intensity" placeholder="Illumination intensity">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：lx )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputIllumination_time" class="col-sm-2 control-label">光照时间</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputIllumination_time" name="illumination_time" placeholder="Illumination time">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：h/d )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputWind_direction" class="col-sm-2 control-label">风向风速</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="inputWind_direction" name="wind_direction" >s
+                            <option>北风</option>
+                            <option>东北风</option>
+                            <option>东风</option>
+                            <option>东南风</option>
+                            <option>南风</option>
+                            <option>西南风</option>
+                            <option>西风</option>
+                            <option>西北风</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputWind_speed" name="wind_speed" placeholder="Wind speed">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：m/s )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPlant_diseases" class="col-sm-2 control-label">病虫草害</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="inputPlant_diseases" name="plant_diseases" >
+                            <option>无</option>
+                            <option>少</option>
+                            <option>一般</option>
+                            <option>多</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCultivated_crops" class="col-sm-2 control-label">耕作管理</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivated_crops" name="cultivated_crops1" placeholder="Cultivated crops">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivation_cycle" name="cultivation_cycle1" placeholder="Cultivation cycle">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：t/y )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCultivated_crops" class="col-sm-2 control-label">...( 选填 )</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivated_crops" name="cultivated_crops2" placeholder="Cultivated crops">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivation_cycle" name="cultivation_cycle2" placeholder="Cultivation cycle">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：t/y )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCultivated_crops" class="col-sm-2 control-label">...( 选填 )</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivated_crops" name="cultivated_crops3" placeholder="Cultivated crops">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="inputCultivation_cycle" name="cultivation_cycle3" placeholder="Cultivation cycle">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：t/y )</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputChemical_fertilizer" class="col-sm-2 control-label">化肥量</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputChemical_fertilizer" name="chemical_fertilizer" placeholder="Chemical fertilizer">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：kg/mu)</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputManure" class="col-sm-2 control-label">农肥量</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="inputManure" name="manure" placeholder="Manure">
+                    </div>
+                    <div class="col-sm-2">
+                        <h4>(单位：kg/mu)</h4>
                     </div>
                 </div>
                 <div class="form-group">
@@ -168,9 +353,10 @@ $(function(){
             </form>
         </div>
     </div>
-<div class="foot" style="position: relative;margin-top: 25px">
-	<div style="width: 1000px; margin: 0 auto">
-		Copyright© 2016 .All Rights Reserved<br> 版权所有
-	</div>
-</div>
-</body></html>
+    <div class="foot" style="position: relative;margin-top: 25px">
+        <div style="width: 1000px; margin: 0 auto">
+            Copyright© 2016 .All Rights Reserved<br> 版权所有
+        </div>
+    </div>
+</body>
+</html>

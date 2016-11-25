@@ -110,12 +110,35 @@ $(function(){
     //$("title").html("耕地地力评价系统-正在分析...");
     });
 	</script>
+    <script>
+        $(document).ready(function(){
+            var level = $(".yellow.color").text();
+            var index;
+            if(level == "一级地"){
+                index = 6;
+            }else if(level == "二级地"){
+                index = 5;
+            }else if(level == "三级地"){
+                index = 4;
+            }else if(level == "四级地"){
+                index = 3;
+            }else if(level == "五级地"){
+                index = 2;
+            }else{
+                index = 1;
+            }
+            var left = 17 * index - 28;
+            var width = 17 * index;
+            $(".banner_bar.banner_bar_yellow").css("width",width + "px");
+            $(".selection_bar.selection_yellow").css("left",left + "px");
+        });
+    </script>
     <div id="detail_frame"><div class="banner">
         <div class="banner_in">
             <div class="ret_info">
                 <div class="info1" style="margin: 0">耕地地力评价：</div>
                 <div class="info5">
-                    <div class="yellow color">X 级地</div>
+                    <div class="yellow color">{{ level }}级地</div>
                     <div class="banner_bar_bg">
                         <div class="banner_bar banner_bar_yellow"></div>
                         <div class="selection_bar selection_yellow"></div>
@@ -124,7 +147,7 @@ $(function(){
                 </div>
                 <p class="info3" style="background: url(../static/images/fico_other.png) no-repeat;padding-left:40px">
                     信息来源：
-                    <span title="The_Django_Book_2.0中文译本.pdf">xxx </span>
+                    <span>{{ source }} </span>
                 </p>
                 <p class="info2" style="margin:15px 0 0 0"></p>
             </div>
@@ -154,36 +177,36 @@ $(function(){
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tbody>
                                 <tr>
-                                    <td class="tdwid" style="width:20%">耕地名称：</td>
+                                    <td class="tdwid" style="width:20%">土壤类别：</td>
                                     <td style="width:80%">
-                                        <p title="fieldname">
-                                            fieldname
+                                        <p>
+                                            {{ earth_type }}
                                         </p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>耕地类别：</td>
-                                    <td>type</td>
+                                    <td>{{ field_type }}</td>
                                 </tr>
                                 <tr>
                                     <td>有机质含量：</td>
-                                    <td>organic_matter</td>
+                                    <td>{{ organic_matter }} g/kg</td>
                                 </tr>
                                 <tr>
                                     <td>全氮含量：</td>
-                                    <td>total_nitrogen</td>
+                                    <td>{{ total_nitrogen }} g/kg</td>
                                 </tr>
                                 <tr>
                                     <td>速效磷含量：</td>
-                                    <td>available_P</td>
+                                    <td>{{ available_p }} g/kg</td>
                                 </tr>
                                 <tr>
                                     <td>速效钾含量：</td>
-                                    <td>available_K</td>
+                                    <td>{{ available_k }} g/kg</td>
                                 </tr>
                                 <tr>
                                     <td>耕地地力评估：</td>
-                                    <td>land_capability</td>
+                                    <td>{{ land_capability }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -199,38 +222,34 @@ $(function(){
                             <tr>
                                 <td class="tdwid" style="width:20%">地形：</td>
                                 <td style="width:80%">
-                                    <p title="terrain">
-                                        terrain
+                                    <p>
+                                        {{ terrain }}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>植被：</td>
-                                <td>vegetation</td>
+                                <td>{{ vegetation }}</td>
                             </tr>
                             <tr>
                                 <td>气候：</td>
-                                <td>climate</td>
-                            </tr>
-                            <tr>
-                                <td>水文：</td>
-                                <td>hydrology</td>
+                                <td>{{ climate }}</td>
                             </tr>
                             <tr>
                                 <td>光照强度：</td>
-                                <td>Illumination  intensity</td>
+                                <td>{{ illumination_intensity }} lx</td>
                             </tr>
                             <tr>
                                 <td>光照时间：</td>
-                                <td>Illumination time</td>
+                                <td>{{ illumination_time }} h/d</td>
                             </tr>
                             <tr>
                                 <td>风向风速：</td>
-                                <td>Wind direction & wind speed</td>
+                                <td>{{ wind_direction }} & {{ wind_speed }} m/s</td>
                             </tr>
                             <tr>
                                 <td>病虫草害情况：</td>
-                                <td>Plant diseases and insect pests</td>
+                                <td>{{ plant_diseases }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -246,30 +265,30 @@ $(function(){
                             <tr>
                                 <td class="tdwid" style="width:20%">耕作物：</td>
                                 <td style="width:80%">
-                                    <p title="Cultivated crops">
-                                        Cultivated crops
+                                    <p>
+                                        {{ cultivated_crops1 }}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>耕作周期：</td>
-                                <td>Cultivation cycle</td>
+                                <td>{{ cultivation_cycle1 }} t/y</td>
                             </tr>
                             <tr>
                                 <td>耕作物：</td>
-                                <td>Cultivated crops</td>
+                                <td>{{ cultivated_crops2 }}</td>
                             </tr>
                             <tr>
                                 <td>耕作周期：</td>
-                                <td>Cultivation cycle</td>
+                                <td>{{ cultivation_cycle2 }} t/y</td>
                             </tr>
                             <tr>
                                 <td>耕作物：</td>
-                                <td>Cultivated crops</td>
+                                <td>{{ cultivated_crops3 }}</td>
                             </tr>
                             <tr>
                                 <td>耕作周期：</td>
-                                <td>Cultivation cycle</td>
+                                <td>{{ cultivation_cycle3 }} t/y</td>
                             </tr>
                         </tbody>
                     </table>
@@ -285,14 +304,14 @@ $(function(){
                             <tr>
                                 <td class="tdwid" style="width:20%">化肥量：</td>
                                 <td style="width:80%">
-                                    <p title="chemical fertilizer">
-                                        chemical fertilizer
+                                    <p>
+                                        {{ chemical_fertilizer }} kg/mu
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>农肥量：</td>
-                                <td>Manure</td>
+                                <td>{{ manure }} kg/mu</td>
                             </tr>
                         </tbody>
                     </table>
@@ -306,16 +325,16 @@ $(function(){
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td class="tdwid" style="width:20%">合理程度评价：</td>
+                                <td class="tdwid" style="width:20%">合理程度：</td>
                                 <td style="width:80%">
-                                    <p title="Evaluation of rational ">
-                                        Evaluation of rational
+                                    <p>
+                                       {{ evaluation }}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>理由：</td>
-                                <td>Reason</td>
+                                <td>{{ reason }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -331,30 +350,30 @@ $(function(){
                             <tr>
                                 <td class="tdwid" style="width:20%">耕地可更改用途为：</td>
                                 <td style="width:80%">
-                                    <p title="Change for xxx">
-                                        Change for xxx
+                                    <p>
+                                        {{ change_for1 }}
                                     </p>
                                 </td>
                             </tr>
                             <tr>
                                 <td>可能性：</td>
-                                <td>Possibility</td>
+                                <td>{{ possibility1 }}</td>
                             </tr>
                             <tr>
                                 <td>条件：</td>
-                                <td>Condition</td>
+                                <td>{{ condition1 }}</td>
                             </tr>
                             <tr>
                                 <td>耕地可更改用途为：</td>
-                                <td>Change for xxx</td>
+                                <td>{{ change_for2 }}</td>
                             </tr>
                             <tr>
                                 <td>可能性：</td>
-                                <td>Possibility</td>
+                                <td>{{ possibility2 }}</td>
                             </tr>
                             <tr>
                                 <td>条件：</td>
-                                <td>Condition</td>
+                                <td>{{ condition2 }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -368,16 +387,17 @@ $(function(){
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td>主要改善耕地元素的缺乏，可通过调整施肥的量来调整</td>
+                                {% if lack %}
+                                <td>耕地主要缺乏{{ lack }}元素，在原本的施肥量上可以通过多施含有{{ lack }}的肥料来提高耕地地力</td>
+                                {% else %}
+                                <td>耕地为一级地，各耕地元素已处于最佳水平，只需保持原来施肥量来维持原状即可</td>
+                                {% endif %}
                             </tr>
                             <tr>
-                                <td>调整耕作物和耕作周期</td>
+                                <td>调整耕作物和耕作周期，增加相关用途，充分利用土地，在相同的耕地地力上创造更多的经济收入</td>
                             </tr>
                             <tr>
-                                <td>增加相关用途，充分利用土地</td>
-                            </tr>
-                            <tr>
-                                <td>从可持续发展的角度去使用土地</td>
+                                <td>从可持续发展的角度去使用土地，在保证耕地地力不衰减的同时保证耕作物的持续收成</td>
                             </tr>
                         </tbody>
                     </table>
