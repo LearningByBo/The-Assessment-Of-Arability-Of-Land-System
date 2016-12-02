@@ -10,6 +10,7 @@ urlpatterns = [
 
     url(r'^$', views.index),
     url(r'^index$', views.index),
+    url(r'^index/(?P<err_mess>\w+)/$', views.index_err_mess),
     url(r'^info-input$', views.info_input),
     url(r'^file-upload$', views.file_upload),
     url(r'^analyse$', views.analyse),

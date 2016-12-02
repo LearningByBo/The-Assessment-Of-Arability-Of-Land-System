@@ -8,6 +8,7 @@ from django.template import loader, Context
 from System.models import Factor
 from .forms import UploadFileForm
 import sys
+from django.core.context_processors import csrf
 
 
 # Create your views here.
@@ -15,6 +16,12 @@ def index(request):
     template = loader.get_template('index.html')
     # Factor.generate_DesicionTree()
     return HttpResponse(template.render('', request))
+
+
+def index_err_mess(request,err_mess):
+    context = Context({err_mess: err_mess})
+    context.update(csrf(request))
+    return render_to_response('index.html',context)
 
 
 def info_input(request):
@@ -289,10 +296,12 @@ def file_upload(request):
             # get the data from the uploaded_file
             data = handle_uploaded_file(request.FILES['uploadfile'])
             if data == []:
-                return render_to_response('index.html')
+                template = loader.get_template('index.html')
+                return HttpResponseRedirect('/index/upload_file_message_missing/',)
             # verify the data
             if not verify_upload_file_data(data):
-                return render_to_response('index.html')
+                template = loader.get_template('index.html')
+                return HttpResponseRedirect('/index/upload_file_message_verify_fail/', )
             else:
                 illumination_intensity = float(data[9])
                 illumination_time = float(data[10])
@@ -319,7 +328,8 @@ def file_upload(request):
                 manure = float(data[17])
                 context = get_context(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],illumination_intensity,illumination_time,str(data[11].encode('utf-8')).split(',')[0].strip(),wind_speed,data[12],cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure)
                 if context == None:
-                    return render_to_response('index.html')
+                    template = loader.get_template('index.html')
+                    return HttpResponseRedirect('/index/upload_file_message_verify_fail/', )
                 else:
                     return render_to_response('analyse-detail.html',context)
 
@@ -334,7 +344,8 @@ def handle_uploaded_file(f):
         for line in reader.readlines():
             # verify the data is digital & some data must be set
             # print line.split(':')[1].strip('\r\n').strip().decode("utf-8")
-            data.append(line.split(':')[1].strip('\r\n').strip().decode("utf-8"))
+            if line.split(':').__len__() == 2:
+                data.append(line.split(':')[1].strip('\r\n').strip().decode("utf-8"))
     if data.__len__() != 18:
         data = []
     # print data
