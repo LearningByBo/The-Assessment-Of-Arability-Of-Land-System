@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, menu, nav, section {
     display: block;
 }
 blockquote, q {
@@ -31,9 +31,6 @@ html, body {
 .hot_frame{
 	color:#FFFFFF;
 	width:115px;
-}
-.hot_frame:hover{
-	background:url(../images/bg_blue.png) repeat;
 }
 #safe_hot{
 	cursor:default;
@@ -204,10 +201,6 @@ html, body {
 	margin: 0 auto;
 	position: relative;
 	overflow:hidden;
-}
-
-.upload:hover{
-    background: url("../images/upload_hover.png");
 }
 
 /*第1屏*/
@@ -934,7 +927,7 @@ html, body {
     height:67px;
     background:url("../images/section4_title.png") no-repeat 0 0;
     /* older safari/Chrome browsers */
-    -webkit-opacity: 0
+    -webkit-opacity: 0;
     /* Netscape and Older than Firefox 0.9 */
      -moz-opacity: 0;
     /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
@@ -1326,22 +1319,6 @@ html, body {
 	width: 1px;
 }
 
-.fileName {
-	color: #7a7a7a;
-	font-size: 16px;
-	display: block;
-	float: left;
-	height: 44px;
-	line-height: 44px;
-	padding-left: 50px;
-	background: url(../images/ic1.png) no-repeat;
-	margin: 20px 0 0 100px;
-	width: 500px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap
-}
-
 .uploadify-queue-item .data {
 	margin: 20px 0 0 0;
 	float: right;
@@ -1361,40 +1338,12 @@ html, body {
 	display: none;
 }
 
-.word_suc {
-	height: 36px;
-	padding-left: 50px;
-	line-height: 36px;
-	background: url(../images/ic2.png) no-repeat;
-	color: #383838;
-	font-size: 16px;
-	margin: 40px 0 0 20px;
-	width: 600px;
-}
-
-.word_fail {
-	height: 36px;
-	padding-left: 50px;
-	line-height: 36px;
-	background: url(../images/dialog_tips.png) no-repeat;
-	color: #383838;
-	font-size: 16px;
-	margin: 40px 0 0 20px;
-	width: 600px;
-}
-
 .word_suc a {
 	font-size: 14px;
 	color: #0892e6;
 	text-decoration: none;
 }
 
-.word_suc .to_ret {
-	width: 124px;
-	height: 36px;
-	background: url(../images/to_ret.png) no-repeat;
-	float: right;
-}
 
 .countDown {
 	font: 12px/20px "΢���ź�";
@@ -1433,30 +1382,6 @@ html, body {
 	height: 130px;
 	padding: 10px;
 	display: none;
-}
-.upgrade_word {
-	#height: 36px;
-	padding-left:55px;
-	#line-height: 25px;
-	background: url(../images/dialog_tips.png) no-repeat left center;
-	color: #383838;
-	font-size: 16px;
-	margin: 20px 0 0 20px;
-	width: 600px;
-}
-.btn-defaultUpgrade{
-	float:left;
-	width:120px;
-	height:40px;
-	margin:20px 0px 0px 93px;
-	background:url("../images/btn-defaultUpgrade.png");
-}
-.btn-upgrade{
-	float:right;
-	width:160px;
-	height:40px;
-	margin:20px 20px 0px 0px;
-	background:url("../images/btn-upgrade.png");
 }
 
 #fp-nav {
@@ -1628,10 +1553,6 @@ html, body {
 	font-size:14px;
 	margin-top:18px;
 }
-.upload_fail_frame .tips_main {
-	margin-left:40px;
-	background:url(../images/dialog_tips_big.png) no-repeat;
-}
 .upload_fail_frame .tips_right{
 	margin-left:120px;
 	text-align:left;
@@ -1646,11 +1567,4 @@ html, body {
 	background:url(../images/icons.png) no-repeat -20px 2px;
 	padding-left:15px;
 	margin:6px 0;
-}
-.upload_faile_txt{
-	padding-left:100px;
-	background:url(../images/dialog_tips.png) no-repeat;
-	height:60px;
-	margin-left:20px;
-	line-height:30px;
 }

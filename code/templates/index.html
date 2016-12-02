@@ -7,8 +7,6 @@
     <title>耕地地力评价系统</title>
 
     <script src="../static/js/jquery-1.8.3.min.js"></script>
-    <script language="javascript" src="../static/js/tcss.ping.https.js"></script>
-
     <link href="../static/css/comm.css" rel="stylesheet" type="text/css">
     <link href="../static/css/head.css" rel="stylesheet">
 
@@ -45,7 +43,6 @@
 
     </script>
 
-
 </head>
 <body style="overflow: visible; height: initial;" class="fp-viewing-0">
     <div id="tip" style="width: 1918px;">
@@ -75,8 +72,6 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="../static/js/userLogin.js"></script>
-    <script type="text/javascript" src="../static/js/showDialog.fix.js"></script>
     <script type="text/javascript" src="../static/js/waypoints.js"></script>
     <script src="../static/js/jquery.fullPage.js"></script>
     <script src="../static/js/jquery.easing.min.js"></script>
@@ -446,30 +441,29 @@
                 <div class="fp-tableCell" style="height: 925px;">
                     <div class="wrap">
                         <div class="slogan animation1"></div>
-                        <form method="post" enctype="multipart/form-data" class="upload_form">
+                        <form method="post" enctype="multipart/form-data" class="upload_form" action="fileupload">
+                            {% csrf_token %}
                             <div id="upload2" class="upload upload_btn_index animation2">
-                                <input id="file_upload2" name="fil" type="file" width="208" unselectable="on" onclick="this.form.reset();">
+                                <input id="file_upload2" name="uploadfile" type="file" width="208" unselectable="on" onclick="this.form.reset()">
+                                <button id="uploadsubbmit2" type="submit" style="display: none"></button>
                             </div>
                             <div class="upload_tips animation2_1">
-                                <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
+                                <a href="javascript:show_filetype();" class="upload_detail_btn">查看支持的上传文件类型</a>
                                 <div class="tips_frame" style="display: none;">
                                     <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
                                     <div class="tips_content">
                                         <div class="tips_title">
-                                            <div class="tips_close"></div>
+                                            <div class="tips_close" onclick="show_filetype()"></div>
                                         </div>
                                         <div class="tips_main">
                                             <div class="tips_right">
                                                 <div class="tips_title_letter">支持文件格式：</div>
                                                 <ul>
-                                                    <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
-                                                    <li>各种压缩包（RAR、ZIP、7z等）</li>
-                                                    <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
+                                                    <li>TXT</li>
                                                 </ul>
                                                 <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
                                                 <ul>
-                                                    <li>普通用户不超过30MB</li>
-                                                    <li>高级用户不超过100MB</li>
+                                                    <li>不超过30MB</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -515,30 +509,29 @@
                 <div class="fp-tableCell" style="height: 925px;">
                     <div class="wrap">
                         <div class="slogan"></div>
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data" class="upload_form" action="fileupload">
+                            {% csrf_token %}
                             <div id="upload" class="upload upload_btn_index">
-                                <input id="file_upload" name="fil" type="file" width="208" unselectable="on" onclick="this.form.reset();">
+                                <input id="file_upload" name="uploadfile" type="file" width="208" unselectable="on" onclick="this.form.reset()">
+                                <button id="uploadsubbmit" type="submit" style="display: none" ></button>
                             </div>
                             <div class="upload_tips">
-                                <a href="javascript:void(0);" class="upload_detail_btn">查看支持的上传文件类型</a>
+                                <a href="javascript:show_filetype();" class="upload_detail_btn">查看支持的上传文件类型</a>
                                 <div class="tips_frame" style="display: none;">
                                     <div class="tips_arrow"><img src="../static/images/arrow.png"></div>
                                     <div class="tips_content">
                                         <div class="tips_title">
-                                            <div class="tips_close"></div>
+                                            <div class="tips_close" onclick="show_filetype()"></div>
                                         </div>
                                         <div class="tips_main">
                                             <div class="tips_right">
                                                 <div class="tips_title_letter">支持文件格式：</div>
                                                 <ul>
-                                                    <li>APK、EXE、BAT、JS、VBS、SWF、PDF、HTML</li>
-                                                    <li>各种压缩包（RAR、ZIP、7z等）</li>
-                                                    <li>Office文档（DOC/DOCX、XLS/XLSX、PPT/PPTX等）</li>
+                                                    <li>TXT</li>
                                                 </ul>
                                                 <div class="tips_title_letter" style="margin-top:1px">支持文件大小：</div>
                                                 <ul>
-                                                    <li>普通用户不超过30MB</li>
-                                                    <li>高级用户不超过100MB</li>
+                                                    <li>不超过30MB</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -551,48 +544,23 @@
                 </div>
             </div>
         </div>
-
     </div>
-    <div id="h5Show" style="display:none;" class="uploadify-queue">
-        <div id="h5-queue-item" class="uploadify-queue-item">
-            <div class="cancel">
-                <a href="javascript:showDialog.hide();" class="close"></a>
-                <span id="fileName" class="fileName"></span>
-                <span id="stateData" class="data"></span>
-                <div id="fileSize"></div>
-                <div id="fileType"></div>
-                <div id="bar" class="uploadify-progress">
-                    <div id="progressbar"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="file_upload_suc">
-        <a href="javascript:showDialog.hide();" class="close"></a>
-        <div id="word_suc" class="word_suc">
-            <a href="javascript:void(0)" class="to_ret" onclick="showDetail()"></a>上传成功！正在分析文件，大概需要两分钟...
-            <a href="javascript:void(0)" onclick="email()">完成后邮件通知我</a>
-        </div>
-    </div>
-    <div id="file_upload_fail">
-        <a href="javascript:showDialog.hide();" id="close" class="close"></a>
-        <div id="word_fail" class="upload_fail_frame">
-
-        </div>
-    </div>
-    <div id="some_file_queue" class="uploadify-queue" style="display:none"></div>
-    <input type="hidden" name="md5" id="md5">
-    <input type="hidden" name="fuid" id="fuid">
-    <input id="is_login" type="hidden" value="">
-
 
 <script type="text/javascript" src="../static/js/new.js"></script>
 <script type="text/javascript" src="../static/js/json.js"></script>
-<script type="text/javascript" src="../static/js/jquery.uploadify.min.js"></script>
-<script type="text/javascript" src="../static/js/uploadSuccess.js"></script>
-<script type="text/javascript" src="../static/js/commo.js"></script>
-<script type="text/javascript" src="../static/js/upload.js"></script>
 <script type="text/javascript" src="../static/js/jquery-ui-1.8.4.custom.min.js"></script>
+
+<script type="text/javascript">
+    function show_filetype(){
+        var is_show = $(".tips_frame").css("display");
+        //alert(is_show)
+        if(is_show == "none"){
+            $(".tips_frame").css("display","block");
+        }else{
+            $(".tips_frame").css("display","none");
+        }
+    }
+</script>
 
 <script type="text/javascript">
     //页面刷新时强行回到顶端
@@ -601,7 +569,13 @@
                 setTimeout(function () {
                     window.scrollTo(0, 0);
                 }, 500);
-            }
+                $("#file_upload").bind("change",function(){
+                    $("#uploadsubbmit").click();
+                });
+                $("#file_upload2").bind("change",function(){
+                    $("#uploadsubbmit2").click();
+                });
+                    }
     );
 </script>
 </body>
