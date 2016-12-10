@@ -6,6 +6,8 @@ from sklearn import tree
 from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import classification_report
 from sklearn.cross_validation import train_test_split
+from sklearn.externals import joblib
+import sys
 
 
 # Create your models here.
@@ -48,8 +50,10 @@ class Factor(models.Model):
         clf.fit(x_train, y_train)
 
         # 把决策树结构写入文件
-        with open("tree.dot", 'w') as f:
+        with open(sys.path[0] + '\\static\\model_file\\' + "tree.dot", 'w') as f:
             f = tree.export_graphviz(clf, out_file=f)
+        fname = "tree2.dot"
+        joblib.dump(clf, sys.path[0] + '\\static\\model_file\\' + fname)
 
         # 系数反映每个特征的影响力。越大表示该特征在分类中起到的作用越大
         print(clf.feature_importances_)
@@ -79,6 +83,12 @@ class Factor(models.Model):
         temp.append(available_p)
         temp.append(available_k)
         x = np.array(temp)
-        clf = Factor.generate_DesicionTree()
-        answer = clf.predict(x)
+
+        # Generate a higher score model
+        # clf = Factor.generate_DesicionTree()
+        # score : 0.90 0.85 0.85 20
+
+        fname = "tree2.dot"
+        clf1 = joblib.load(sys.path[0] + '\\static\\model_file\\' + fname)
+        answer = clf1.predict(x)
         return answer

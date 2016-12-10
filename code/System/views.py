@@ -14,7 +14,6 @@ from django.core.context_processors import csrf
 # Create your views here.
 def index(request):
     template = loader.get_template('index.html')
-    # Factor.generate_DesicionTree()
     return HttpResponse(template.render('', request))
 
 
@@ -30,9 +29,6 @@ def info_input(request):
 
 
 def analyse(request):
-    # 1, prehandle the input data
-    # 2, gennerate the Decesion Tree and predict the data
-    # 3, display the prediction
 
     # may not exist
     if 'organic_matter' in request.POST and request.POST['organic_matter']:
@@ -137,6 +133,7 @@ def analyse(request):
         template = loader.get_template('info-input.html')
         context = Context({'mess': '请填写全部信息'})
     else:
+        context.update({'source': '手动输入'})
         template = loader.get_template('analyse-detail.html')
 
     return HttpResponse(template.render(context, request))
@@ -273,7 +270,7 @@ def get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,
         context = Context(
             {'lack': lack, 'condition2': condition2, 'possibility2': possibility2, 'change_for2': change_for2,
              'condition1': condition1, 'possibility1': possibility1, 'change_for1': change_for1, 'reason': reason,
-             'evaluation': evaluation, 'level': level, 'source': '手动输入', 'land_capability': level + '级地',
+             'evaluation': evaluation, 'level': level, 'land_capability': level + '级地',
              'earth_type': earth_type, 'field_type': field_type, 'organic_matter': organic_matter,
              'total_nitrogen': total_nitrogen, 'available_p': available_p, 'available_k': available_k,
              'terrain': terrain, 'vegetation': vegetation, 'climate': climate,
@@ -331,6 +328,7 @@ def file_upload(request):
                     template = loader.get_template('index.html')
                     return HttpResponseRedirect('/index/upload_file_message_verify_fail/', )
                 else:
+                    context.update({'source': '文件上传'})
                     return render_to_response('analyse-detail.html',context)
 
 
