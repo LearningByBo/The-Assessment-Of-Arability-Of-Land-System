@@ -9,6 +9,7 @@ from System.models import Factor
 from .forms import UploadFileForm
 import sys
 from django.core.context_processors import csrf
+from django.http import StreamingHttpResponse
 
 
 # Create your views here.
@@ -26,6 +27,25 @@ def index_err_mess(request,err_mess):
 def info_input(request):
     template = loader.get_template('info-input.html')
     return HttpResponse(template.render('', request))
+
+
+def download_example_file(request):
+
+    def file_iterator(file_name, chunk_size=512):
+        with open(sys.path[0] + '\\static\\example_file_to_download\\' + file_name) as f:
+            while True:
+                c = f.read(chunk_size)
+                if c:
+                    yield c
+                else:
+                    break
+
+    the_file_name = "example.txt"
+    response = StreamingHttpResponse(file_iterator(the_file_name))
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="{0}"'.format(the_file_name)
+
+    return response
 
 
 def analyse(request):

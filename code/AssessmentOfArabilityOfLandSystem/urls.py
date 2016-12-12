@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^index/(?P<err_mess>\w+)/$', views.index_err_mess),
     url(r'^info-input$', views.info_input),
     url(r'^file-upload$', views.file_upload),
+    url(r'^downloadExampleFile$', views.download_example_file),
     url(r'^analyse$', views.analyse),
     url(r'^admin/', include(admin.site.urls)),
 ]
