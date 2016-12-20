@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>耕地地力评价系统-评价结果</title>
+
+<script src="/static/js/jquery-1.8.3.min.js"></script>
+<link href="/static/css/comm.css" rel="stylesheet" type="text/css">
+<link href="/static/css/head.css" rel="stylesheet">
+<script language="javascript" src="/static/js/compare_nav.js"></script>
+<script type="text/javascript">
+$(function(){
+	//建议ie8以上浏览器
+	var w = document.body.scrollWidth;
+    $("#tip").width(w);
+
+	var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+
+    var s;
+    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+    (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+    (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+    (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+    (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+    var t = ua.match(/trident/);
+    if (Sys.ie){
+	    var sys = null;
+		sys = Sys.ie;
+		var v = parseInt(sys);
+		if(v < 8){
+			document.getElementById("tip").style.display = "block";
+		//	setTimeout(function(){ document.getElementById("tip").style.display = "none"; },10000);
+		}
+	}
+
+    $("#image").bind("click",function(){
+		document.getElementById("tip").style.display = "none";
+	})
+})
+
+</script>
+
+
+</head>
+<body >
+	<div id="tip" style="width: 1918px;">
+		<span class="tip">建议使用IE8以上版本或其他浏览器</span> <img src="/static/images/close.png" id="image">
+	</div>
+	<div id="orientation_tip">
+	    <span class="tip">建议使用横屏浏览</span> <span style="" id="image2"><img src="/static/images/close(1).png" style="margin: 20px 0 0 20px"></span>
+	</div>
+	<div style="background: #FFF; width: 100%">
+		<div class="top">
+			<div class="wtitle">
+				<a href="index"><img src="/static/images/head_title.png" height="90" style="border:0"></a>
+			</div>
+			<ul style="margin-right:20px">
+                <li><a href="/index">首页</a></li>
+                <li><a href="/info-input">信息录入</a></li>
+                <li class="set"><a href="/compare">算法比较</a></li>
+			</ul>
+		</div>
+	</div>
+
+    <link href="/static/css/detail.css" rel="stylesheet" type="text/css">
+
+    <div id="detail_frame"><div class="banner">
+        <div class="banner_in">
+            <div class="ret_info">
+                <div class="info1" style="margin: 0">算法比较：</div>
+                <div class="info5" style="height: auto;font-size: 23px;font-weight: bold;padding: 5px 0 0 0">
+                    <div class="yellow color">系统随机从数据库中取出20个数据集，再从这20个数据集中随机抽取80%的数据集做为核心算法的训练样本集，由剩下的20%的数据集作为测试样本集。<br/>应用不同的核心算法对相同数据进行数据分析，并对各自的分析结果进行分析，最后做出总结。</div>
+                </div>
+            </div>
+            <div class="banner_right">
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sub" style="background: url(../static/images/getbgPicNum6.png) 80px 0px repeat-y;height: 201px">
+            <ul style=" background-position: 80px 0px;">
+                <li class="set"><a href="#DATA" class="set">数据概况</a></li>
+                <li><a href="#DT" class="">决策树</a></li>
+                <li><a href="#KNN" class="">K最近邻</a></li>
+                <li><a href="#SVM" class="">支持向量机</a></li>
+                <li><a href="#LR" class="">逻辑回归</a></li>
+                <li><a href="#Summarize" class="">总结</a></li>
+            </ul>
+        </div>
+        <div class="main_info">
+            <div id="DATA">
+                <h3 class="step">
+                    <span>数据概况</span>
+                </h3>
+                <div class="tab">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdwid" style="width:20%;height: auto">总样本：</td>
+                                    <td style="width:80%">
+                                        <p>
+                                            {{ x }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>总样本对应结果：</td>
+                                    <td>{{ y }}</td>
+                                </tr>
+                                <tr>
+                                    <td>训练样本：</td>
+                                    <td>{{ x_train }} </td>
+                                </tr>
+                                <tr>
+                                    <td>训练样本对应结果：</td>
+                                    <td>{{ y_train }} </td>
+                                </tr>
+                                <tr>
+                                    <td>测试样本：</td>
+                                    <td>{{ x_test }} </td>
+                                </tr>
+                                <tr>
+                                    <td>测试样本对应结果：</td>
+                                    <td>{{ y_test }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div id="DT">
+                <h3 class="step">
+                    <span>决策树</span>
+                </h3>
+                <div class="tab">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="tdwid" style="width:20%">算法详细信息：</td>
+                                    <td style="width:80%">
+                                        <p>
+                                            {{ dt_clf }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>对训练样本重新评估：</td>
+                                    <td>{{ dt_answer }}</td>
+                                </tr>
+                                <tr>
+                                    <td>对总样本评估：</td>
+                                    <td>{{ dt_x_answer }}</td>
+                                </tr>
+                                <tr >
+                                    <td>准确率与召回率：</td>
+                                    <td style="white-space:pre-wrap">{{ dt_report }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div id="KNN">
+                <h3 class="step">
+                    <span>K最近邻</span>
+                </h3>
+                <div class="tab">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">算法详细信息：</td>
+                                <td style="width:80%">
+                                    <p>
+                                        {{ knn_clf }}
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>对训练样本重新评估：</td>
+                                <td>{{ knn_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>对总样本评估：</td>
+                                <td>{{ knn_x_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>准确率与召回率：</td>
+                                <td style="white-space:pre-wrap">{{ knn_report }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="SVM">
+                <h3 class="step">
+                    <span>支持向量机</span>
+                </h3>
+                <div class="tab">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">算法详细信息：</td>
+                                <td style="width:80%">
+                                    <p>
+                                        {{ svm_clf_rbf }}
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>对训练样本重新评估：</td>
+                                <td>{{ svm_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>对总样本评估：</td>
+                                <td>{{ svm_x_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>准确率与召回率：</td>
+                                <td style="white-space:pre-wrap">{{ svm_report }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="LR">
+                <h3 class="step">
+                    <span>逻辑回归</span>
+                </h3>
+                <div class="tab">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td class="tdwid" style="width:20%">算法详细信息：</td>
+                                <td style="width:80%">
+                                    <p>
+                                        {{ lr_clf }}
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>对训练样本重新评估：</td>
+                                <td>{{ lr_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>对总样本评估：</td>
+                                <td>{{ lr_x_answer }}</td>
+                            </tr>
+                            <tr>
+                                <td>准确率与召回率：</td>
+                                <td style="white-space:pre-wrap">{{ lr_report }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="Summarize">
+                <h3 class="step">
+                    <span>总结</span>
+                </h3>
+                <div class="tab">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>通过以上四种核心算法的比较可以看出，使用决策树生成算法对数据的预测的准确率最高，召回率也是最高，其余三个核心算法显示对数据预测的准确率与召回率显然不太理想</td>
+                            </tr>
+                            <tr>
+                                <td>其他三种算法不理想的原因可能是因为算法自身的适用情况就本系统而言不太理想，也有可能是因为本系统的数据量不够大有关系</td>
+                            </tr>
+                            <tr>
+                                <td>综上，在进行耕地地力评估的时候，推荐用户使用决策树算法进行预测</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<div class="foot" style="position: relative">
+	<div style="width: 1000px; margin: 0 auto">
+		Copyright© 2016 .All Rights Reserved<br> 版权所有
+	</div>
+</div>
+<script type="text/javascript">
+	  $(document).ready( function() {
+          $(".main").jumpto();
+          $("td p").css("whiteSpace","normal");
+	  });
+
+</script>
+</body></html>

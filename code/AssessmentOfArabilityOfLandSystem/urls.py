@@ -10,8 +10,10 @@ urlpatterns = [
 
     url(r'^$', views.index),
     url(r'^index$', views.index),
-    url(r'^index/(?P<err_mess>\w+)/$', views.index_err_mess),
+    url(r'^index/(?P<err_mess>\w+)/(?P<select>\w+)/$', views.index_err_mess),
+    url(r'^algorithm/(?P<select>\w+)/(?P<destination>\w+)/$', views.algorithm_select),
     url(r'^info-input$', views.info_input),
+    url(r'^compare$', views.algorithm_compare),
     url(r'^file-upload$', views.file_upload),
     url(r'^downloadExampleFile$', views.download_example_file),
     url(r'^analyse$', views.analyse),

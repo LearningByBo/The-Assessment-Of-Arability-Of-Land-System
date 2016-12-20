@@ -10,7 +10,6 @@
 <script language="javascript" src="/static/js/detail_nav.js"></script>
 <script type="text/javascript">
 $(function(){
-
 	//建议ie8以上浏览器
 	var w = document.body.scrollWidth;
     $("#tip").width(w);
@@ -59,12 +58,8 @@ $(function(){
 			<ul style="margin-right:20px">
                 <li><a href="/index">首页</a></li>
                 <li><a href="/info-input">信息录入</a></li>
+                <li><a href="/compare">算法比较</a></li>
 			</ul>
-			<div class="nick_nologin">
-				<div id="nologin" style="display: none;">
-					<a href="/admin">登录</a>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -94,8 +89,8 @@ $(function(){
         });
     </script>
     <div id="detail_frame"><div class="banner">
-        <div class="banner_in">
-            <div class="ret_info">
+        <div class="banner_in" style="margin: 20px auto 20px auto">
+            <div class="ret_info" style="height: 170px;">
                 <div class="info1" style="margin: 0">耕地地力评价：</div>
                 <div class="info5">
                     <div class="yellow color">{{ level }}级地</div>
@@ -108,6 +103,9 @@ $(function(){
                 <p class="info3" style="background: url(/static/images/fico_other.png) no-repeat;padding-left:40px">
                     信息来源：
                     <span>{{ source }} </span>
+                    <br>
+                    核函数(准确率)：
+                    <span>{{ algorithm }} ({{ score }})</span>
                 </p>
                 <p class="info2" style="margin:15px 0 0 0"></p>
             </div>

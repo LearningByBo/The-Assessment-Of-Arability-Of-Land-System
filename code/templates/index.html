@@ -12,6 +12,13 @@
 
     <script type="text/javascript">
         $(function () {
+            $(".li_list").hover(function(){
+                $(".li_list .arrow").addClass("arrow_up");
+                $(".li_list .sub_list").show();
+            },function(){
+                $(".li_list .arrow").removeClass("arrow_up");
+                $(".li_list .sub_list").hide();
+            });
             //建议ie8以上浏览器
             var w = document.body.scrollWidth;
             $("#tip").width(w);
@@ -39,6 +46,7 @@
             $("#image").bind("click", function () {
                 document.getElementById("tip").style.display = "none";
             })
+
         })
 
     </script>
@@ -62,7 +70,24 @@
             </div>
             <ul>
                 <li class="set"><a href="/index">首页</a></li>
-                <li style="margin-right: 400px"><a href="/info-input">信息录入</a></li>
+                <li><a href="/info-input">信息录入</a></li>
+                <li class="li_list">
+                    <a href="javascript:void(0);" style="cursor:default">
+                        {% if select_ch %}
+                            {{ select_ch }}
+                        {% else %}
+                            算法选择
+                        {% endif %}
+                    </a>
+                    <div class="arrow"></div>
+                    <div class="sub_list" style="display: none;">
+                        <a href="/algorithm/dt/index" class="a">决策树(推荐)</a>
+                        <a href="/algorithm/knn/index" class="a" style="border-top:1px solid #ddd">K最近邻</a>
+                        <a href="/algorithm/svm/index" class="a" style="border-top:1px solid #ddd">支持向量机</a>
+                        <a href="/algorithm/lr/index" class="a" style="border-top:1px solid #ddd">逻辑回归</a>
+                    </div>
+                </li>
+                <li style="margin-right: 60px"><a href="/compare">算法比较</a></li>
             </ul>
             <div class="nick_nologin" style="margin-right: 2px;">
                 <div id="nologin" style="display: block;">
@@ -451,6 +476,11 @@
                         {% endif %}
                         <form method="post" enctype="multipart/form-data" class="upload_form" action="/file-upload">
                             {% csrf_token %}
+                            {% if select %}
+                                <input id="algorithm_select2" name="select" type="text" value="{{ select }}" style="display: none">
+                            {% else %}
+                                <input id="algorithm_select2" name="select" type="text" value="dt" style="display: none">
+                            {% endif %}
                             <div id="upload2" class="upload upload_btn_index animation2">
                                 <input id="file_upload2" name="uploadfile" type="file" width="208" unselectable="on" onclick="this.form.reset()">
                                 <button id="uploadsubbmit2" type="submit" style="display: none"></button>
@@ -531,6 +561,11 @@
                         {% endif %}
                         <form method="post" enctype="multipart/form-data" class="upload_form" action="/file-upload">
                             {% csrf_token %}
+                            {% if select %}
+                                <input id="algorithm_select" name="select" type="text" value="{{ select }}" style="display: none">
+                            {% else %}
+                                <input id="algorithm_select" name="select" type="text" value="dt" style="display: none">
+                            {% endif %}
                             <div id="upload" class="upload upload_btn_index">
                                 <input id="file_upload" name="uploadfile" type="file" width="208" unselectable="on" onclick="this.form.reset()">
                                 <button id="uploadsubbmit" type="submit" style="display: none" ></button>

@@ -18,10 +18,36 @@ def index(request):
     return HttpResponse(template.render('', request))
 
 
-def index_err_mess(request,err_mess):
-    context = Context({err_mess: err_mess})
+def index_err_mess(request,err_mess,select):
+    if select == 'dt':
+        select_ch = '算法:决策树'
+    elif select == 'knn':
+        select_ch = '算法:K最近邻'
+    elif select == 'svm':
+        select_ch = '算法:支持向量机'
+    elif select == 'lr':
+        select_ch = '算法:逻辑回归'
+    context = Context({err_mess: err_mess,'select': select,'select_ch':select_ch})
     context.update(csrf(request))
     return render_to_response('index.html',context)
+
+
+def algorithm_select(request,select,destination):
+    if select == 'dt':
+        select_ch = '算法:决策树'
+    elif select == 'knn':
+        select_ch = '算法:K最近邻'
+    elif select == 'svm':
+        select_ch = '算法:支持向量机'
+    elif select == 'lr':
+        select_ch = '算法:逻辑回归'
+    context = Context({'select': select,'select_ch':select_ch})
+    context.update(csrf(request))
+    if destination == 'index':
+        destination = 'index.html'
+    else:
+        destination = 'info-input.html'
+    return render_to_response(destination, context)
 
 
 def info_input(request):
@@ -49,7 +75,8 @@ def download_example_file(request):
 
 
 def analyse(request):
-
+    if 'select' in request.POST and request.POST['select']:
+        al_select = request.POST['select']
     # may not exist
     if 'organic_matter' in request.POST and request.POST['organic_matter']:
         organic_matter = request.POST['organic_matter']
@@ -148,10 +175,20 @@ def analyse(request):
     if 'plant_diseases' in request.POST and request.POST['plant_diseases']:
         plant_diseases = request.POST['plant_diseases']
 
-    context = get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,available_k,terrain,vegetation,climate,illumination_intensity,illumination_time,wind_direction,wind_speed,plant_diseases,cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure)
+    context = get_context(al_select,earth_type,field_type,organic_matter,total_nitrogen,available_p,available_k,terrain,vegetation,climate,illumination_intensity,illumination_time,wind_direction,wind_speed,plant_diseases,cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure)
     if context == None:
         template = loader.get_template('info-input.html')
         context = Context({'mess': '请填写全部信息'})
+        context.update(csrf(request))
+        if al_select == 'dt':
+            select_ch = '算法:决策树'
+        elif al_select == 'knn':
+            select_ch = '算法:K最近邻'
+        elif al_select == 'svm':
+            select_ch = '算法:支持向量机'
+        elif al_select == 'lr':
+            select_ch = '算法:逻辑回归'
+        context.update({'select': al_select, 'select_ch': select_ch})
     else:
         context.update({'source': '手动输入'})
         template = loader.get_template('analyse-detail.html')
@@ -159,7 +196,7 @@ def analyse(request):
     return HttpResponse(template.render(context, request))
 
 
-def get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,available_k,terrain,vegetation,climate,illumination_intensity,illumination_time,wind_direction,wind_speed,plant_diseases,cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure):
+def get_context(al_select,earth_type,field_type,organic_matter,total_nitrogen,available_p,available_k,terrain,vegetation,climate,illumination_intensity,illumination_time,wind_direction,wind_speed,plant_diseases,cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure):
     if organic_matter != -1:
         organic_matter = float(organic_matter)
         if organic_matter > 2.6:
@@ -235,11 +272,9 @@ def get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,
                 illumination_intensity != -1) and (illumination_time != -1) and (wind_speed != -1) and (
                 cultivated_crops1 != '') and (cultivation_cycle1 != -1) and (chemical_fertilizer != -1) and (
         manure != -1):
-        answer = Factor.predict_data(organic_matter_in, total_nitrogen_in, available_p_in, available_k_in)
+        answer,score = Factor.predict_data(al_select,organic_matter_in, total_nitrogen_in, available_p_in, available_k_in)
         index = int(answer[0])
-        # print index
         level = levellist[index - 1]
-        # print level
         evaluation = '一般'
         reason = '只耕种一种耕作物，不能很好地利用土地的资源，因为单一的耕作物对耕地中的微量元素的需求一成不变，故浪费了耕地中的另一部分的微量元素'
         if (cultivated_crops2 != 'N/A') and (cultivation_cycle2 != 'N/A'):
@@ -287,8 +322,17 @@ def get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,
         if index == 1:
             lack = ''
 
+        if al_select == 'dt':
+            algorithm = '决策树'
+        elif al_select == 'knn':
+            algorithm = 'K最近邻'
+        elif al_select == 'svm':
+            algorithm = '支持向量机'
+        elif al_select == 'lr':
+            algorithm = '逻辑回归'
+
         context = Context(
-            {'lack': lack, 'condition2': condition2, 'possibility2': possibility2, 'change_for2': change_for2,
+            {'score':score,'algorithm':algorithm,'lack': lack, 'condition2': condition2, 'possibility2': possibility2, 'change_for2': change_for2,
              'condition1': condition1, 'possibility1': possibility1, 'change_for1': change_for1, 'reason': reason,
              'evaluation': evaluation, 'level': level, 'land_capability': level + '级地',
              'earth_type': earth_type, 'field_type': field_type, 'organic_matter': organic_matter,
@@ -307,6 +351,9 @@ def get_context(earth_type,field_type,organic_matter,total_nitrogen,available_p,
 
 
 def file_upload(request):
+    if 'select' in request.POST and request.POST['select']:
+        al_select = request.POST['select']
+        #print al_select
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -314,11 +361,11 @@ def file_upload(request):
             data = handle_uploaded_file(request.FILES['uploadfile'])
             if data == []:
                 template = loader.get_template('index.html')
-                return HttpResponseRedirect('/index/upload_file_message_missing/',)
+                return HttpResponseRedirect('/index/upload_file_message_missing/'+al_select+'/',)
             # verify the data
             if not verify_upload_file_data(data):
                 template = loader.get_template('index.html')
-                return HttpResponseRedirect('/index/upload_file_message_verify_fail/', )
+                return HttpResponseRedirect('/index/upload_file_message_verify_fail/'+al_select+'/', )
             else:
                 illumination_intensity = float(data[9])
                 illumination_time = float(data[10])
@@ -343,10 +390,10 @@ def file_upload(request):
                     cultivation_cycle3 = 'N/A'
                 chemical_fertilizer = float(data[16])
                 manure = float(data[17])
-                context = get_context(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],illumination_intensity,illumination_time,str(data[11].encode('utf-8')).split(',')[0].strip(),wind_speed,data[12],cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure)
+                context = get_context(al_select,data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],illumination_intensity,illumination_time,str(data[11].encode('utf-8')).split(',')[0].strip(),wind_speed,data[12],cultivated_crops1,cultivation_cycle1,cultivated_crops2,cultivation_cycle2,cultivated_crops3,cultivation_cycle3,chemical_fertilizer,manure)
                 if context == None:
                     template = loader.get_template('index.html')
-                    return HttpResponseRedirect('/index/upload_file_message_verify_fail/', )
+                    return HttpResponseRedirect('/index/upload_file_message_verify_fail/'+al_select+'/', )
                 else:
                     context.update({'source': '文件上传'})
                     return render_to_response('analyse-detail.html',context)
@@ -476,3 +523,41 @@ def is_wind_direction(s):
 def is_plant_diseases(s):
     plant_diseases = [u'无',u'少',u'一般',u'多']
     return plant_diseases.__contains__(s)
+
+
+def algorithm_compare(request):
+    data, clf, clf_data = Factor.algorithm_compare()
+    #print data
+    #print clf
+    #print clf_data
+    x = data[0]
+    y = data[1]
+    x_train = data[2]
+    y_train = data[3]
+    x_test = data[4]
+    y_test = data[5]
+
+    dt_clf = clf[0]
+    knn_clf = clf[1]
+    svm_clf_rbf = clf[2]
+    lr_clf = clf[3]
+
+    dt_answer = clf_data[0]
+    dt_x_answer = clf_data[1]
+    dt_report = clf_data[2]
+    knn_answer = clf_data[3]
+    knn_x_answer = clf_data[4]
+    knn_report = clf_data[5]
+    svm_answer = clf_data[6]
+    svm_x_answer = clf_data[7]
+    svm_report = clf_data[8]
+    lr_answer = clf_data[9]
+    lr_x_answer = clf_data[10]
+    lr_report = clf_data[11]
+
+    context = Context(
+        {'x': x, 'y': y,'x_train':x_train,'y_train':y_train,'x_test':x_test,'y_test':y_test,'dt_clf':dt_clf,'knn_clf':knn_clf,'svm_clf_rbf':svm_clf_rbf,
+         'lr_clf':lr_clf,'dt_answer':dt_answer,'dt_x_answer':dt_x_answer,'dt_report':dt_report,'knn_answer':knn_answer,'knn_x_answer':knn_x_answer,'knn_report':knn_report,
+         'svm_answer': svm_answer, 'svm_x_answer': svm_x_answer, 'svm_report': svm_report,'lr_answer':lr_answer,'lr_x_answer':lr_x_answer,'lr_report':lr_report,}
+    )
+    return render_to_response('algorithm-compare.html', context)
